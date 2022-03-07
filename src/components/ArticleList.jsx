@@ -13,7 +13,7 @@ export default function ArticleList({ articles, setArticles }) {
     });
   }, []);
 
-  if (isLoading) return <h4>LOADING U CRAZY MOFO!!!</h4>;
+  if (isLoading) return <h4>PLEASE WAIT. ARTICLES LOADING....</h4>;
 
   return (
     <article>
