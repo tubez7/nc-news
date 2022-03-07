@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { UserContext } from "./contexts/user-context";
+
+import Header from "./components/Header.jsx";
+import Nav from "./components/Nav.jsx";
+import Home from "./components/Home";
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({
+    username: "Login To NC News",
+    avatar_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg",
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+      <div className="App">
+        <Header />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/article/:article_id" element={<Article />} />
+          <Route path="/topics/:topic" element={<Topic />} /> */}
+        </Routes>
+      </div>
+    </UserContext.Provider>
   );
 }
 
