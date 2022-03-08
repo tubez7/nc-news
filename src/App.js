@@ -7,6 +7,7 @@ import { UserContext } from "./contexts/user-context";
 import Header from "./components/Header.jsx";
 import Nav from "./components/Nav.jsx";
 import Home from "./components/Home";
+import ErrorPage from "./components/ErrorPage.jsx"
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/article/:article_id" element={<Article />} />
           <Route path="/topics/:topic" element={<Topic />} /> */}
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </UserContext.Provider>

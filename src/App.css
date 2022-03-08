@@ -7,12 +7,15 @@
   background-color: beige;
   margin-left: 1rem;
   margin-right: 1rem;
+  padding: 0.5rem;
 
 }
 
 .Nav_Link{
-  display: block;
-  float: left;
+  display: inline;
+  align-items: center;
+  /* display: block;
+  float: left; */
   width:4em ;
   margin: 1%;
   padding: 1%;
@@ -20,14 +23,18 @@
 }
 
 .Avatar_Image {
+  display: block;
+  align-items: center;
   width: 70px;
   object-fit: cover;
   border-radius: 50%;
+  
 }
 
 
 
 .Articles_sort {
+  display: block;
   text-align: center;
   font-size: 0.9em;
   display: flex;

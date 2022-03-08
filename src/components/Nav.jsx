@@ -6,6 +6,14 @@ export default function Nav() {
   const { loggedInUser } = useContext(UserContext);
   return (
     <nav className="Nav_Bar">
+      <div className="User_Icon">
+        {loggedInUser.username}
+        <img
+          src={loggedInUser.avatar_url}
+          className="Avatar_Image"
+          alt="Profile for the logged-in user"
+          />
+      </div>
       <Link to="/" className="Nav_Link">
       <button>Home</button>
       </Link>
@@ -15,14 +23,7 @@ export default function Nav() {
       <Link to="/user" className="Nav_Link">
       <button>User Profiles</button>
       </Link>
-      <span className="User_Icon">
-        {loggedInUser.username}
-        <img
-          src={loggedInUser.avatar_url}
-          className="Avatar_Image"
-          alt="Profile for the logged-in user"
-          />
-      </span>
+      
     </nav>
   );
 }
