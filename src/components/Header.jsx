@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <h2>NC NEWS</h2>
+        <h2 className="font-link">NC NEWS</h2>
     )
 
 }

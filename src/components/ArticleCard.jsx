@@ -10,11 +10,14 @@ const ArticleCard = ({
   created_at,
   comment_count,
 }) => {
-
-  const creationDate = created_at.slice(11, 16) + " - " + created_at.slice(8, 10) +
-  "-" + created_at.slice(5, 7) + "-" + created_at.slice(0, 4);
-
-
+  const creationDate =
+    created_at.slice(11, 16) +
+    " - " +
+    created_at.slice(8, 10) +
+    "-" +
+    created_at.slice(5, 7) +
+    "-" +
+    created_at.slice(0, 4);
 
   return (
     <article className="Article-card">
@@ -26,10 +29,10 @@ const ArticleCard = ({
           {topic.charAt(0).toUpperCase() + topic.slice(1)}
         </h4>
       </Link>
-      <h4 className="Itemcard-author">Posted By: {author}</h4>
-      <h5 className="Itemcard-created-at">
-        Posted: {creationDate}
-      </h5>
+      <Link to={`/api/users/${author}`}>
+        <h4 className="Itemcard-author">{author}</h4>
+      </Link>
+      <h5 className="Itemcard-created-at">Posted: {creationDate}</h5>
       <p className="Itemcard-body">{body}</p>
       <h5 className="Itemcard-votes">Votes: {votes}</h5>
 

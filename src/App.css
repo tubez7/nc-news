@@ -1,29 +1,56 @@
 .App {
   text-align: center;
+  background-color: rgb(241, 241, 236);
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  .App {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  .App {
+    font-size: 22px;
+  }
+}
+
+.font-link {
+  font-family: "Libre Baskerville", serif;
 }
 
 .Nav_Bar {
-  border-style: solid;
-  background-color: rgb(155, 212, 191);
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: 0.5rem;
-
-}
-
-.Nav_Bar_Items {
-  align-items: center;
-}
-
-.Nav_Link{
-  display: inline;
-  align-items: center;
-  /* display: block;
-  float: left; */
-  width:4em ;
-  margin: 1%;
-  padding: 1%;
   
+  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(155, 212, 191));
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+  max-width: 750px;
+}
+
+/* .Nav_Bar_Items {
+  align-items: center;
+} */
+
+.Nav-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Nav_Link {
+  border: 2px solid black;
+  background-color:rgba(201, 76, 76, 0);
+  margin: auto;
+  color: black;
+  padding: 14px 28px;
+  font-size: 90%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.Nav_Link:hover {
+  background-color: rgb(144, 197, 178);
 }
 
 .Avatar_Image {
@@ -31,45 +58,102 @@
   width: 70px;
   object-fit: cover;
   border-radius: 50%;
-  
 }
-
-
-
-.Articles_sort {
-  display: block;
-  text-align: center;
-  font-size: 0.9em;
-  display: flex;
-	flex-direction: column;
-	justify-content: center;
-  padding: 1em;
-  
-}
-
-.select_by {
-  margin:1em
-}
-
-
 
 .Nav_Articles {
   
-  border-style: solid;
-  background-color: rgb(227, 203, 250);
+  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(227, 203, 250));
   margin-top: 1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40%;
 }
+
+.Articles_sort {
+  text-align: center;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 1em;
+}
+
+input[type="text"] {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75em;
+  overflow: auto;
+  position: relative;
+  max-width: 75%;
+}
+
+.Radio-order {
+  margin-top: 1em;
+  display: flex;
   
+  max-width: 75%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-by {
+  margin: 1em;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75em;
+}
 
 .Article-card {
   border-style: dotted;
+  border-color: rgb(124, 124, 124);
   background-color: beige;
-  margin-top: 5rem;
-  margin-left: 6em;
-  margin-right: 6em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding-left: 1%;
+  padding-right: 1%;
+}
 
+.Article-heading {
+  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(227, 203, 250));
+  max-width: 75%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em
+}
 
+.Article-body {
+  border-style: dotted;
+  border-color: rgb(124, 124, 124);
+  background-color: beige;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding: auto;
+  display: block;
+  align-content: center;
+  text-align: center;
+}
+
+.Article-text {
+  text-align: left;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+textarea {
+  position: relative;
+  display: block;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  width: 90%;
+  max-width: 700px;
+  background-color: rgb(237, 238, 234);
 }

@@ -1,22 +1,15 @@
 import { useState } from "react";
 
-
-import ArticlesSort from "./ArticleSort";
+import SearchBar from "./SearchBar";
 import ArticleList from "./ArticleList";
 
-
 export default function Home() {
-    const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]);
 
   return (
-
     <main>
-
-    <ArticlesSort articles={articles} setArticles={setArticles}/>
-    <ArticleList articles={articles} setArticles={setArticles}/>
-
+      <SearchBar articles={articles} setArticles={setArticles} />
+      <ArticleList articles={articles} setArticles={setArticles} />
     </main>
-    
-    
   );
 }
