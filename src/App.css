@@ -2,37 +2,69 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Nav_Bar {
+  border-style: solid;
+  background-color: rgb(155, 212, 191);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.Nav_Bar_Items {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Nav_Link{
+  display: inline;
+  align-items: center;
+  /* display: block;
+  float: left; */
+  width:4em ;
+  margin: 1%;
+  padding: 1%;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Avatar_Image {
+  align-self: center;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  
+}
+
+
+
+.Articles_sort {
+  display: block;
+  text-align: center;
+  font-size: 0.9em;
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+  padding: 1em;
+  
+}
+
+
+.Nav_Articles {
+  
+  border-style: solid;
+  background-color: rgb(227, 203, 250);
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  
+}
+  
+
+.Article-card {
+  border-style: dotted;
+  background-color: beige;
+  margin-top: 5rem;
+  margin-left: 6em;
+  margin-right: 6em;
+
+
 }
