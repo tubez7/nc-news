@@ -3,7 +3,7 @@ export default function ArticlesSort() {
     <nav className="Nav_Articles">
       <section className="Articles_sort">
         <label for="ArticleList">Select a category to sort by: </label>
-        <select name="article_categories">
+        <select className="select_by" name="article_categories">
           <option value="created_at">Date created</option>
           <option value="article_id">Article ID</option>
           <option value="title">Title</option>
