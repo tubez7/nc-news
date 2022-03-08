@@ -4,11 +4,15 @@
 
 .Nav_Bar {
   border-style: solid;
-  background-color: beige;
+  background-color: rgb(155, 212, 191);
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 0.5rem;
 
+}
+
+.Nav_Bar_Items {
+  align-items: center;
 }
 
 .Nav_Link{
@@ -23,8 +27,7 @@
 }
 
 .Avatar_Image {
-  display: block;
-  align-items: center;
+  align-self: center;
   width: 70px;
   object-fit: cover;
   border-radius: 50%;
@@ -48,7 +51,7 @@
 .Nav_Articles {
   
   border-style: solid;
-  background-color: beige;
+  background-color: rgb(227, 203, 250);
   margin-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -56,4 +59,12 @@
 }
   
 
+.Article-card {
+  border-style: dotted;
+  background-color: beige;
+  margin-top: 5rem;
+  margin-left: 6em;
+  margin-right: 6em;
 
+
+}
