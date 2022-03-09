@@ -19,8 +19,11 @@
 }
 
 .Nav_Bar {
-  
-  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(155, 212, 191));
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(155, 212, 191)
+  );
   margin-left: auto;
   margin-right: auto;
   padding: 0.5rem;
@@ -38,7 +41,7 @@
 
 .Nav_Link {
   border: 2px solid black;
-  background-color:rgba(201, 76, 76, 0);
+  background-color: rgba(201, 76, 76, 0);
   margin: auto;
   color: black;
   padding: 14px 28px;
@@ -61,8 +64,11 @@
 }
 
 .Nav_Articles {
-  
-  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(227, 203, 250));
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(227, 203, 250)
+  );
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -90,7 +96,7 @@ input[type="text"] {
 .Radio-order {
   margin-top: 1em;
   display: flex;
-  
+
   max-width: 75%;
   justify-content: center;
   margin-left: auto;
@@ -118,18 +124,19 @@ input[type="text"] {
 }
 
 .Article-heading {
-  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(227, 203, 250));
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(227, 203, 250)
+  );
   max-width: 75%;
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1em
+  padding: 1em;
 }
 
 .Article-body {
-  border-style: dotted;
-  border-color: rgb(124, 124, 124);
-  background-color: beige;
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
