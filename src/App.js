@@ -9,6 +9,7 @@ import Nav from "./components/Nav.jsx";
 import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage.jsx"
 import Article from "./components/Article";
+import TopicsList from "./components/TopicsList";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -25,7 +26,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles/:article_id" element={<Article />} />
-          {/* <Route path="/topics/:topic" element={<Topic />} /> */}
+          <Route path="/topics" element={<TopicsList />} />
+          {/* <Route path="/topics/:topic" element={<TopicsList />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
