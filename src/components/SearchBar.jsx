@@ -1,9 +1,9 @@
-export default function ArticlesSort() {
+export default function SearchBar() {
   return (
     <nav className="Nav_Articles">
       <section className="Articles_sort">
         <label for="ArticleList">Select a category to sort by: </label>
-        <select className="select_by" name="article_categories">
+        <select className="select-by" id="article-categories" name="article-categories">
           <option value="created_at">Date created</option>
           <option value="article_id">Article ID</option>
           <option value="title">Title</option>
@@ -13,16 +13,15 @@ export default function ArticlesSort() {
           <option value="votes">Votes</option>
           <option value="comment_count">Number of comments</option>
         </select>
-        <form>
+        <form className="Search-box">
           <input type="text" placeholder="Search topic..."></input>
         </form>
-        <span>
-          <text>Order By:</text>
+        <div className="Radio-order">
+          <label for="DESC">Desc</label>
           <input type="radio" name="sort" value="DESC" checked></input>
-          <label for="sort1">Desc</label>
+          <label for="ASC">Asc</label>
           <input type="radio" name="sort" value="ASC"></input>
-          <label for="sort2">Asc</label>
-        </span>
+        </div>
       </section>
     </nav>
   );
