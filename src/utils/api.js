@@ -6,36 +6,41 @@ const api = axios.create({
 
 export function getArticles(topic) {
   if (topic !== undefined) {
-    return api.get("/articles", {
-      params: {
-        topic: `${topic}`,
-      }
-    }).then(({data: {articles}}) => {
-      return articles;
-    })
+    return api
+      .get("/articles", {
+        params: {
+          topic: `${topic}`,
+        },
+      })
+      .then(({ data: { articles } }) => {
+        return articles;
+      });
   } else {
-    return api.get("/articles").then(({data: {articles}}) => {
+    return api.get("/articles").then(({ data: { articles } }) => {
       return articles;
-    })
+    });
   }
 }
 
-
 export function getArticleById(articleId) {
   console.log(articleId, "api triggered get article by ID");
-  return api.get(`/articles/${articleId}`)
-  .then(({ data: { article } }) => {
+  return api.get(`/articles/${articleId}`).then(({ data: { article } }) => {
     console.log(article, "data in API response");
     return article;
   });
 }
 
 export function getTopics() {
-  return api.get("/topics").then(({data: {topics}}) => {
+  return api.get("/topics").then(({ data: { topics } }) => {
     return topics;
-  })
+  });
 }
 
-
-
-
+export function updateVotes(articleId, voteChange) {
+  console.log(articleId, voteChange, "inside API patch")
+  return api
+    .patch(`/articles/${articleId}`, { vote_inc: voteChange })
+    .then(({ data: { article } }) => {
+      console.log(article);
+    });
+}

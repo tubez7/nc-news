@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Vote from "./vote";
 
 export default function SingleArticle(article) {
   const creationDate =
@@ -28,10 +29,8 @@ export default function SingleArticle(article) {
       </section>
       <div className="Article-body">
         <p className="Article-text">{article.body}</p>
-        <h4>VOTES: {article.votes}</h4>
-        <span>VOTE -{"   "}</span>
-        <button>+</button>
-        <button>-</button>
+        <Vote {...article}/>
+
         <section>
           <textarea
             id="add_comment"
