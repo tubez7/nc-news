@@ -1,15 +1,13 @@
-import { useState } from "react";
-
 import SearchBar from "./SearchBar";
+import TopicsBar from "./TopicsBar";
 import ArticleList from "./ArticleList";
 
-export default function Home() {
-  const [articles, setArticles] = useState([]);
-
+export default function Home({ topics, setTopics }) {
   return (
     <main>
-      <SearchBar articles={articles} setArticles={setArticles} />
-      <ArticleList articles={articles} setArticles={setArticles} />
+      <SearchBar />
+      <TopicsBar topics={topics} setTopics={setTopics} />
+      <ArticleList />
     </main>
   );
 }

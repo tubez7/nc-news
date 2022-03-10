@@ -16,7 +16,7 @@ export default function Nav() {
           <p>{loggedInUser.username}</p>
         </div>
         <div className="Nav-buttons">
-        <Link to="/">
+        <Link to="/articles">
           <button className="Nav_Link">Articles</button>
         </Link>
         <Link to={`/users/${loggedInUser.username}`}>
