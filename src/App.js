@@ -7,7 +7,7 @@ import { UserContext } from "./contexts/user-context";
 import Header from "./components/Header.jsx";
 import Nav from "./components/Nav.jsx";
 import Home from "./components/Home";
-import ErrorPage from "./components/ErrorPage.jsx"
+import ErrorPage from "./components/ErrorPage.jsx";
 import Article from "./components/Article";
 import TopicsList from "./components/TopicsList";
 
@@ -18,17 +18,32 @@ function App() {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg",
   });
   const [topics, setTopics] = useState([]);
+  // const [selectedTopic, setSelectedTopic] = useState();
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       <div className="App">
         <Header />
-        <Nav />
+        <Nav  />
         <Routes>
-          <Route path="/" element={<Home topics={topics} setTopics={setTopics}/>} />
+          <Route
+            path="/"
+            element={<Home topics={topics} setTopics={setTopics} />}
+          />
+         
+          <Route
+            path="/articles"
+            element={<Home topics={topics} setTopics={setTopics} />}
+          />
           <Route path="/articles/:article_id" element={<Article />} />
-          <Route path="/topics" element={<TopicsList topics={topics} setTopics={setTopics}/>} />
-          
+          <Route
+            path="/topics"
+            element={<TopicsList topics={topics} setTopics={setTopics} />}
+          />
+          <Route
+            path="/topics/:topic"
+            element={<Home topics={topics} setTopics={setTopics} />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
