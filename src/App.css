@@ -30,17 +30,12 @@
   max-width: 750px;
 }
 
-/* .Nav_Bar_Items {
-  align-items: center;
-} */
-
 .Nav-buttons {
   display: flex;
   justify-content: space-between;
 }
 
 .Nav_Link {
-  border: 2px solid black;
   background-color: rgba(201, 76, 76, 0);
   margin: auto;
   color: black;
@@ -72,6 +67,7 @@
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
   max-width: 40%;
 }
 
@@ -93,10 +89,10 @@ input[type="text"] {
   max-width: 75%;
 }
 
+
 .Radio-order {
   margin-top: 1em;
   display: flex;
-
   max-width: 75%;
   justify-content: center;
   margin-left: auto;
@@ -109,6 +105,35 @@ input[type="text"] {
   margin-left: auto;
   margin-right: auto;
   font-size: 0.75em;
+}
+
+.Topic-selector {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+  max-width: 750px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Topic-button {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(227, 203, 250)
+  );
+  margin: auto;
+  color: black;
+  padding: 14px 28px;
+  font-size: 90%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.Topic-button:hover {
+  background-color: rgb(227, 203, 250);
 }
 
 .Article-card {

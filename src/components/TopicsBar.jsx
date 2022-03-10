@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getTopics } from "../utils/api";
+import TopicSelect from "./TopicsSelect";
 
-export default function TopicsList({ setTopics, topics }) {
+export default function TopicsBar({ setTopics, topics}) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,13 +16,10 @@ export default function TopicsList({ setTopics, topics }) {
   if (isLoading) return <h4>PLEASE WAIT. TOPICS LOADING....</h4>;
 
   return (
-    <article>
+    <article className="Topic-selector">
       {topics.map((topic) => {
         return (
-          <div key={topic.slug}>
-            <h4>{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</h4>
-            <p>{topic.description}</p>
-          </div>
+          <TopicSelect key={topic.slug} {...topic}  />
         );
       })}
     </article>

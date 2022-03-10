@@ -22,3 +22,8 @@ export function getArticleById(articleId) {
   });
 }
 
+export function getTopics() {
+  return api.get("/topics").then(({data: {topics}}) => {
+    return topics;
+  })
+}

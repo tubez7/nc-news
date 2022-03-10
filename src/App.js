@@ -17,6 +17,7 @@ function App() {
     avatar_url:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg",
   });
+  const [topics, setTopics] = useState([]);
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
@@ -24,10 +25,10 @@ function App() {
         <Header />
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home topics={topics} setTopics={setTopics}/>} />
           <Route path="/articles/:article_id" element={<Article />} />
-          <Route path="/topics" element={<TopicsList />} />
-          {/* <Route path="/topics/:topic" element={<TopicsList />} /> */}
+          <Route path="/topics" element={<TopicsList topics={topics} setTopics={setTopics}/>} />
+          {/* <Route path="/topics/:topic" */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
