@@ -28,7 +28,7 @@ function App() {
           <Route path="/" element={<Home topics={topics} setTopics={setTopics}/>} />
           <Route path="/articles/:article_id" element={<Article />} />
           <Route path="/topics" element={<TopicsList topics={topics} setTopics={setTopics}/>} />
-          {/* <Route path="/topics/:topic" */}
+          
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

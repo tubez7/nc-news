@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 
-export default function ArticleList({ articles, setArticles }) {
+export default function ArticleList({selectedTopic}) {
   const [isLoading, setIsLoading] = useState(true);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,3 +24,5 @@ export default function ArticleList({ articles, setArticles }) {
     </article>
   );
 }
+
+//invoke getArticles with selectedTopic which will run a query.

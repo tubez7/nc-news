@@ -27,3 +27,10 @@ export function getTopics() {
     return topics;
   })
 }
+
+
+// , {
+//   params: {
+//     topic: `${topic}`,
+//   }
+// }
