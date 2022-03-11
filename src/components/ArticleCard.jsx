@@ -34,9 +34,9 @@ const ArticleCard = ({
       </Link>
       <h5 className="Itemcard-created-at">Posted: {creationDate}</h5>
       <p className="Itemcard-body">{body}</p>
-      <h5 className="Itemcard-votes">Votes: {votes}</h5>
+      <h5 className="Itemcard-votes">{votes} Votes</h5>
 
-      <h5 className="Itemcard-co-count">Comments: {comment_count}</h5>
+      <h5 className="Itemcard-co-count">{comment_count} Comments </h5>
     </article>
   );
 };

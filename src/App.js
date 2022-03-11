@@ -12,13 +12,15 @@ import Article from "./components/Article";
 import TopicsList from "./components/TopicsList";
 
 function App() {
+
   const [loggedInUser, setLoggedInUser] = useState({
     username: "Login To NC News",
     avatar_url:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg",
   });
+
   const [topics, setTopics] = useState([]);
-  // const [selectedTopic, setSelectedTopic] = useState();
+  
 
   return (
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>

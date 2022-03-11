@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import Vote from "./vote";
+import Vote from "./Vote";
+import CommentsList from "./CommentsList";
 
 export default function SingleArticle(article) {
   const creationDate =
@@ -29,9 +30,9 @@ export default function SingleArticle(article) {
       </section>
       <div className="Article-body">
         <p className="Article-text">{article.body}</p>
-        <Vote {...article}/>
+        <Vote {...article} />
 
-        <section>
+        <div>
           <textarea
             id="add_comment"
             name="add_comment"
@@ -39,12 +40,9 @@ export default function SingleArticle(article) {
             placeholder="Please enter your comment here...."
           ></textarea>
           <button>Submit</button>
-        </section>
-        <h5>Comments: {article.comment_count}</h5>
-        <p>
-          WILL RENDER AN EXPANDABLE COMMENTS LIST HERE. RENDER 1ST COMMENT -
-          CLICK TO EXPAND.
-        </p>
+        </div>
+        <CommentsList {...article}/>
+        
       </div>
     </article>
   );
