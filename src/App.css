@@ -178,6 +178,15 @@ input[type="text"] {
   margin-right: 0.5em;
 }
 
+.up-vote {
+ 
+}
+
+.down-vote {
+ 
+}
+
+
 textarea {
   position: relative;
   display: block;
@@ -189,3 +198,60 @@ textarea {
   max-width: 700px;
   background-color: rgb(237, 238, 234);
 }
+
+.topics-block {
+  display: block;
+  overflow: auto;
+    
+}
+
+.coding {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(227, 203, 250)
+  );
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.5rem;
+  max-width: 750px;
+}
+
+.football {
+  /* margin:1em;
+  size:50vw;
+  /* background-image: url(https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); */
+  
+/* background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0,0,0,0.1), url(https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80); */ 
+
+background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(227, 203, 250)
+  );
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.5rem;
+  max-width: 750px;
+
+}
+
+.cooking {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgb(227, 203, 250)
+  );
+
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.5rem;
+  max-width: 750px;
+}
+
