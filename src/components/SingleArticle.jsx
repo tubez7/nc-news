@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Vote from "./vote";
-import Comments from "./Comments";
+import CommentsList from "./CommentsList";
 
 export default function SingleArticle(article) {
   const creationDate =
@@ -41,7 +41,7 @@ export default function SingleArticle(article) {
           ></textarea>
           <button>Submit</button>
         </section>
-        <Comments {...article}/>
+        <CommentsList {...article}/>
         
       </div>
     </article>
