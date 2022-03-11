@@ -1,6 +1,7 @@
 import { useState } from "react";
+import CommentAdder from "./CommentAdder";
 
-export default function ExpandToggle({ children }) {
+export default function ExpandToggle({ children, articleId, setComments }) {
   const [visible, setVisible] = useState(false);
   console.log(children);
 
@@ -13,6 +14,9 @@ export default function ExpandToggle({ children }) {
       <button className="comment-toggle" onClick={toggleVisible}>
         {visible ? "Hide comments" : `${children.length} Comments`}
       </button>
+      {visible && (
+        <CommentAdder setComments={setComments} articleId={articleId} />
+      )}
       {visible && children}
     </div>
   );

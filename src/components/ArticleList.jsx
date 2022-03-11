@@ -14,7 +14,7 @@ export default function ArticleList() {
   useEffect(() => {
     console.log(topic, "inside useEffect");
     setIsLoading(true);
-    return getArticles(topic)
+     getArticles(topic)
       .then((articlesData) => {
         setArticles(articlesData);
         setIsLoading(false);

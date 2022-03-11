@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Vote from "./Vote";
 import CommentsList from "./CommentsList";
+// import CommentAdder from "./CommentAdder";
 
 export default function SingleArticle(article) {
   const creationDate =
@@ -32,17 +33,8 @@ export default function SingleArticle(article) {
         <p className="Article-text">{article.body}</p>
         <Vote {...article} />
 
-        <div>
-          <textarea
-            id="add_comment"
-            name="add_comment"
-            rows="15"
-            placeholder="Please enter your comment here...."
-          ></textarea>
-          <button>Submit</button>
-        </div>
-        <CommentsList {...article}/>
-        
+        {/* <CommentAdder {...article} /> */}
+        <CommentsList {...article} />
       </div>
     </article>
   );

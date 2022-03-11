@@ -22,7 +22,7 @@ export default function CommentsList({ comment_count, article_id }) {
     );
 
   return (
-    <ExpandToggle>
+    <ExpandToggle setComments={setComments} articleId={article_id}>
       {comments.map((comment) => {
         return <CommentCard key={comment.comment_id} {...comment} />;
       })}
