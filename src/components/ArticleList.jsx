@@ -29,13 +29,7 @@ export default function ArticleList() {
 
   if (isLoading) return <h4>PLEASE WAIT. ARTICLES LOADING....</h4>;
 
-  // if (error === 400)
-  // return (
-  //   <>
-  //     <h4>HMMM...I'M AFRAID YOU'VE MADE A BAD REQUEST PAL!</h4>
-  //     <Link to="/">Return to Homepage</Link>
-  //   </>
-  // );
+ 
 
   if (error === 404)
     return (

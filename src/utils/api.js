@@ -4,11 +4,13 @@ const api = axios.create({
   baseURL: "https://nc-news-example-seminar-3-1.herokuapp.com/api",
 });
 
-export function getArticles(topic) {
+export function getArticles(topic, sort, order) {
   return api
     .get("/articles", {
       params: {
         topic: topic,
+        sort_by: sort,
+        order: order,
       },
     })
     .then(({ data: { articles } }) => {
@@ -39,42 +41,17 @@ export function updateVotes(articleId, voteChange) {
     });
 }
 
-// export function getComments(articledId) {
-//   console.log(articleId, "inside the api triggered");
-//   return api
-//   .get(`/articles/${articleId}/comments`, {
-//     params: {
-//       topic: `${topic}`,
-//       sort_by:
-//     },
-//   }).then(({data: {comments}}) => {
-//     return comments;
-//   })
-// }
-
-// export function getComments(articleId) {
-//   return api
-//   .get(`/articles/${articleId}/comments`, {
-//     params: {
-
-//     }
-//   })
-// }
-
-// export function getArticles(topic) {
-//   if (topic !== undefined) {
-//     return api
-//       .get("/articles", {
-//         params: {
-//           topic: `${topic}`,
-//         },
-//       })
-//       .then(({ data: { articles } }) => {
-//         return articles;
-//       });
-//   } else {
-//     return api.get("/articles").then(({ data: { articles } }) => {
-//       return articles;
-//     });
-//   }
-// }
+export function getComments(articleId, sort, order) {
+  console.log("comments api triggered")
+  return api
+    .get(`/articles/${articleId}/comments`, {
+      params: {
+        sort_by: sort,
+        order: order,
+      },
+    })
+    .then(({data: {comments}}) => {
+      console.log("comments in api data")
+      return comments;
+    });
+}
