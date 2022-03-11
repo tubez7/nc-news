@@ -5,21 +5,15 @@ const api = axios.create({
 });
 
 export function getArticles(topic) {
-  if (topic !== undefined) {
-    return api
-      .get("/articles", {
-        params: {
-          topic: `${topic}`,
-        },
-      })
-      .then(({ data: { articles } }) => {
-        return articles;
-      });
-  } else {
-    return api.get("/articles").then(({ data: { articles } }) => {
+  return api
+    .get("/articles", {
+      params: {
+        topic: topic,
+      },
+    })
+    .then(({ data: { articles } }) => {
       return articles;
     });
-  }
 }
 
 export function getArticleById(articleId) {
@@ -37,10 +31,50 @@ export function getTopics() {
 }
 
 export function updateVotes(articleId, voteChange) {
-  console.log(articleId, voteChange, "inside API patch")
+  console.log(articleId, voteChange, "inside API patch");
   return api
     .patch(`/articles/${articleId}`, { vote_inc: voteChange })
     .then(({ data: { article } }) => {
       console.log(article);
     });
 }
+
+// export function getComments(articledId) {
+//   console.log(articleId, "inside the api triggered");
+//   return api
+//   .get(`/articles/${articleId}/comments`, {
+//     params: {
+//       topic: `${topic}`,
+//       sort_by:
+//     },
+//   }).then(({data: {comments}}) => {
+//     return comments;
+//   })
+// }
+
+// export function getComments(articleId) {
+//   return api
+//   .get(`/articles/${articleId}/comments`, {
+//     params: {
+
+//     }
+//   })
+// }
+
+// export function getArticles(topic) {
+//   if (topic !== undefined) {
+//     return api
+//       .get("/articles", {
+//         params: {
+//           topic: `${topic}`,
+//         },
+//       })
+//       .then(({ data: { articles } }) => {
+//         return articles;
+//       });
+//   } else {
+//     return api.get("/articles").then(({ data: { articles } }) => {
+//       return articles;
+//     });
+//   }
+// }
