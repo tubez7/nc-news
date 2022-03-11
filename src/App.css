@@ -254,3 +254,71 @@ textarea {
   padding: 0.5rem;
   max-width: 750px;
 }
+
+.down-vote {
+  font-size: large;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  height: 3em;
+  width: 3em;
+}
+
+.up-vote {
+  font-size: large;
+  margin-left: 0.5em;
+  margin-right: 0.25em;
+  height: 3em;
+  width: 3em;
+}
+
+
+.vote-block {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+
+
+.comment-body {
+  font-size: 0.8em;
+}
+
+.comment-toggle {
+  margin-top: 1em;
+}
+
+.comment-vote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+}
+
+.comment-up-vote {
+  margin-left: 1em;
+  margin-right: 0.25em;
+  height: 2em;
+  width: 2em;
+
+}
+
+.comment-down-vote {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  height: 2em;
+  width: 2em;
+
+}
+
+.comment-card {
+  border-style: dotted;
+  border-color: rgb(124, 124, 124);
+  padding: 1em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left:1rem;
+  margin-right:1rem;
+}

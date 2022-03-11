@@ -8,7 +8,7 @@ const Vote = ({ votes, article_id }) => {
     setVoteChange((currentVote) => {
       return currentVote + voteClick;
     });
-    
+
     updateVotes(article_id, voteChange).catch(() => {
       setVoteChange((currentVote) => {
         return currentVote - voteClick;
@@ -17,16 +17,23 @@ const Vote = ({ votes, article_id }) => {
   };
 
   return (
-    <>
-      <h4>VOTES: {votes + voteChange}</h4>
-      <span>VOTE -{"   "}</span>
-      <button className="up-vote" disabled={voteChange > 0} onClick={() => handleClick(1)}>
+    <div className="vote-block">
+      <h4>{votes + voteChange} Votes</h4>
+      <button
+        className="up-vote"
+        disabled={voteChange > 0}
+        onClick={() => handleClick(1)}
+      >
         +
       </button>
-      <button className="down-vote" disabled={voteChange < 0} onClick={() => handleClick(-1)}>
+      <button
+        className="down-vote"
+        disabled={voteChange < 0}
+        onClick={() => handleClick(-1)}
+      >
         -
       </button>
-    </>
+    </div>
   );
 };
 

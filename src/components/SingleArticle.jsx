@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Vote from "./vote";
+import Vote from "./Vote";
 import CommentsList from "./CommentsList";
 
 export default function SingleArticle(article) {
@@ -32,7 +32,7 @@ export default function SingleArticle(article) {
         <p className="Article-text">{article.body}</p>
         <Vote {...article} />
 
-        <section>
+        <div>
           <textarea
             id="add_comment"
             name="add_comment"
@@ -40,7 +40,7 @@ export default function SingleArticle(article) {
             placeholder="Please enter your comment here...."
           ></textarea>
           <button>Submit</button>
-        </section>
+        </div>
         <CommentsList {...article}/>
         
       </div>
