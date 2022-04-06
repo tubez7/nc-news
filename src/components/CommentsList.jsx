@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
-import ExpandToggle from "./ExpandToggle";
 
-export default function CommentsList({ comment_count, article_id }) {
+
+export default function CommentsList({ comment_count, article_id: articleId, setComments, comments }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [comments, setComments] = useState([]);
+ 
 
   useEffect(() => {
-    getComments(article_id).then((commentsData) => {
+    getComments(articleId).then((commentsData) => {
       setComments(commentsData);
       setIsLoading(false);
     });
@@ -22,10 +22,10 @@ export default function CommentsList({ comment_count, article_id }) {
     );
 
   return (
-    <ExpandToggle>
+    <div>
       {comments.map((comment) => {
         return <CommentCard key={comment.comment_id} {...comment} />;
       })}
-    </ExpandToggle>
+    </div>
   );
 }

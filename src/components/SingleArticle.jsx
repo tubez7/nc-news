@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Vote from "./Vote";
 import CommentsList from "./CommentsList";
+import ExpandToggle from "./ExpandToggle";
+import CommentAdder from "./CommentAdder";
 
 export default function SingleArticle(article) {
+  const [comments, setComments] = useState([]);
+
   const creationDate =
     article.created_at.slice(11, 16) +
     " - " +
@@ -31,18 +36,14 @@ export default function SingleArticle(article) {
       <div className="Article-body">
         <p className="Article-text">{article.body}</p>
         <Vote {...article} />
-
-        <div>
-          <textarea
-            id="add_comment"
-            name="add_comment"
-            rows="15"
-            placeholder="Please enter your comment here...."
-          ></textarea>
-          <button>Submit</button>
-        </div>
-        <CommentsList {...article}/>
-        
+        <ExpandToggle {...article} comments={comments}>
+          <CommentAdder setComments={setComments} {...article} />
+          <CommentsList
+            setComments={setComments}
+            comments={comments}
+            {...article}
+          />
+        </ExpandToggle>
       </div>
     </article>
   );

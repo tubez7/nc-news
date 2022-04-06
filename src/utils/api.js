@@ -42,7 +42,7 @@ export function updateVotes(articleId, voteChange) {
 }
 
 export function getComments(articleId, sort, order) {
-  console.log("comments api triggered")
+  console.log("comments api triggered");
   return api
     .get(`/articles/${articleId}/comments`, {
       params: {
@@ -50,8 +50,17 @@ export function getComments(articleId, sort, order) {
         order: order,
       },
     })
-    .then(({data: {comments}}) => {
-      console.log("comments in api data")
+    .then(({ data: { comments } }) => {
+      console.log("comments in api data");
       return comments;
+    });
+}
+
+export function postComment(articleId, newComment) {
+  console.log("post triggered in api");
+  return api
+    .post(`/articles/${articleId}/comments`, newComment)
+    .then(({ data: { comment } }) => {
+      console.log(comment, "comment data in post response");
     });
 }
