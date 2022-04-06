@@ -1,9 +1,9 @@
 import { useState } from "react";
-import CommentAdder from "./CommentAdder";
 
-export default function ExpandToggle({ children, articleId, setComments }) {
+export default function ExpandToggle({ children, comments, comment_count }) {
   const [visible, setVisible] = useState(false);
-  console.log(children);
+
+  const comNum = comments.length > comment_count ? comments.length : comment_count;
 
   const toggleVisible = () => {
     setVisible((currentVisible) => !currentVisible);
@@ -12,11 +12,8 @@ export default function ExpandToggle({ children, articleId, setComments }) {
   return (
     <div>
       <button className="comment-toggle" onClick={toggleVisible}>
-        {visible ? "Hide comments" : `${children.length} Comments`}
+        {visible ? "Hide comments" : `Show ${comNum} comments`}
       </button>
-      {visible && (
-        <CommentAdder setComments={setComments} articleId={articleId} />
-      )}
       {visible && children}
     </div>
   );

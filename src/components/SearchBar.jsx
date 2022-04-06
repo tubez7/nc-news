@@ -2,7 +2,7 @@ export default function SearchBar() {
   return (
     <nav className="Nav_Articles">
       <section className="Articles_sort">
-        <label for="ArticleList">Select a category to sort by: </label>
+        <label for="ArticleList">Sort by: </label>
         <select className="select-by" id="article-categories" name="article-categories">
           <option value="created_at">Date created</option>
           <option value="article_id">Article ID</option>
@@ -13,9 +13,7 @@ export default function SearchBar() {
           <option value="votes">Votes</option>
           <option value="comment_count">Number of comments</option>
         </select>
-        <form className="Search-box">
-          <input type="text" placeholder="Search topic..."></input>
-        </form>
+        
         <div className="Radio-order">
           <label for="DESC">Desc</label>
           <input type="radio" name="sort" value="DESC" checked></input>
