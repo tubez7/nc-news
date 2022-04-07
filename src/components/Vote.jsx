@@ -10,6 +10,7 @@ const Vote = ({ votes, article_id }) => {
     });
 
     updateVotes(article_id, voteChange).catch(() => {
+      alert("There was a problem registering your vote. Please try again.")
       setVoteChange((currentVote) => {
         return currentVote - voteClick;
       });

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://nc-news-example-seminar-3-1.herokuapp.com/api",
+  baseURL: "https://richard-nc-news.herokuapp.com/api",
 });
 
 export function getArticles(topic, sort, order) {
@@ -35,7 +35,7 @@ export function getTopics() {
 export function updateVotes(articleId, voteChange) {
   console.log(articleId, voteChange, "inside API patch");
   return api
-    .patch(`/articles/${articleId}`, { vote_inc: voteChange })
+    .patch(`/articles/${articleId}`, { inc_votes: voteChange })
     .then(({ data: { article } }) => {
       console.log(article);
     });
