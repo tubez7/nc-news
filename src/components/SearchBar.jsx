@@ -18,13 +18,11 @@ export default function SearchBar({ setSortBy, setOrder, order }) {
           name="article-categories"
         >
           <option value="created_at">Date published</option>
-          <option value="article_id">Article ID</option>
           <option value="title">Title</option>
-
           <option value="topic">Topic</option>
           <option value="author">Author</option>
           <option value="votes">Votes</option>
-          <option value="comment_count">Number of comments</option>
+          <option value="comment_count">Total comments</option>
         </select>
 
         <div className="Radio-order">
@@ -48,4 +46,6 @@ export default function SearchBar({ setSortBy, setOrder, order }) {
       </section>
     </nav>
   );
-}
+};
+
+

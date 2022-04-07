@@ -15,6 +15,7 @@ export default function ArticleList({order, sortBy}) {
   useEffect(() => {
     console.log(topic, sortBy, order, "inside useEffect");
     setIsLoading(true);
+    setError(null);
      getArticles(topic, sortBy, order)
       .then((articlesData) => {
         setArticles(articlesData);
