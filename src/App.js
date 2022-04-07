@@ -26,7 +26,7 @@ function App() {
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       <div className="App">
         <Header />
-        <Nav  />
+        <Nav />
         <Routes>
           <Route
             path="/"

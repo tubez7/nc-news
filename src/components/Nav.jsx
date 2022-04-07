@@ -31,4 +31,4 @@ export default function Nav() {
   );
 }
 
-//conditional logic with user profile? IF LOGGED IN USERNAME IS NOT THE DEFAULT LINK TO USERPROFILE PAGE NOT THE LOGIN PAGE.
+//conditional logic with user profile? IF LOGGED IN USERNAME IS NOT THE DEFAULT, LINK TO USERPROFILE PAGE NOT THE LOGIN PAGE.
