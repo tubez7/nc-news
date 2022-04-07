@@ -4,17 +4,18 @@ import ArticleCard from "./ArticleCard";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export default function ArticleList() {
+export default function ArticleList({order, sortBy}) {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
   const { topic } = useParams();
   const [error, setError] = useState(null);
-  console.log(topic);
+  
+
 
   useEffect(() => {
-    console.log(topic, "inside useEffect");
+    console.log(topic, sortBy, order, "inside useEffect");
     setIsLoading(true);
-     getArticles(topic)
+     getArticles(topic, sortBy, order)
       .then((articlesData) => {
         setArticles(articlesData);
         setIsLoading(false);
@@ -23,9 +24,10 @@ export default function ArticleList() {
         console.dir(err.message, "error.msg in catch block triggered");
         setError(err.response.status);
         console.log(error, "error state in catch")
+        console.dir(err.response);
         setIsLoading(false);
       });
-  }, [topic]);
+  }, [topic, sortBy, order]);
 
   if (isLoading) return <h4>PLEASE WAIT. ARTICLES LOADING....</h4>;
 
