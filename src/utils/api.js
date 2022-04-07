@@ -35,7 +35,7 @@ export function getTopics() {
 export function updateVotes(articleId, voteChange) {
   console.log(articleId, voteChange, "inside API patch");
   return api
-    .patch(`/articles/${articleId}`, { vote_inc: voteChange })
+    .patch(`/articles/${articleId}`, { inc_votes: voteChange })
     .then(({ data: { article } }) => {
       console.log(article);
     });
