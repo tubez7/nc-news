@@ -57,10 +57,16 @@ export function getComments(articleId, sort, order) {
 }
 
 export function postComment(articleId, newComment) {
-  console.log("post triggered in api");
   return api
     .post(`/articles/${articleId}/comments`, newComment)
     .then(({ data: { comment } }) => {
-      console.log(comment, "comment data in post response");
+      return comment;
     });
 }
+
+export function deleteComment(commentId) {
+  return api.delete(`/comments/${commentId}`).then(() => {
+    console.log(`comment ${commentId} deleted`);
+  });
+}
+  

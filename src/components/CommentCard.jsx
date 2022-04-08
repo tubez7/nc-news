@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import DeleteCom from "./DeleteCom";
 
 export default function CommentCard({
   comment_id,
   author,
   created_at,
   body,
-  votes = 0,
+  votes = null,
+  setComments,
+  setComNum,
 }) {
   console.log(comment_id, "needed for voting on later ticket");
 
@@ -25,19 +28,29 @@ export default function CommentCard({
   }
 
   return (
-    <article className="comment-card">
+    <div className="comment-card">
       <section className="comment-header">
         <h5>
-          {author ? <Link to={`/users/${author}`}>{author} </Link> : "You"} @:{" " + creationDate}
+          {author ? <Link to={`/users/${author}`}>{author} </Link> : "You"} @:
+          {" " + creationDate}
         </h5>
       </section>
       <p className="comment-body">{body}</p>
 
       <div className="comment-vote">
-        <h5>{votes} Votes</h5>
-        <button className="comment-up-vote">+</button>
-        <button className="comment-down-vote">-</button>
+        {typeof votes === "number" && (
+          <>
+            <h5>{votes} Votes</h5>
+            <button className="comment-up-vote">+</button>
+            <button className="comment-down-vote">-</button>
+          </>
+        )}
       </div>
-    </article>
+      <DeleteCom
+        commentId={comment_id}
+        setComments={setComments}
+        setComNum={setComNum}
+      />
+    </div>
   );
 }

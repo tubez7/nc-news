@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { postComment } from "../utils/api";
 
-export default function CommentAdder({ setComments, article_id: articleId }) {
-
+export default function CommentAdder({
+  setComments,
+  article_id: articleId,
+  setComNum,
+}) {
   const [newBody, setNewBody] = useState("");
 
   const handleChange = (e) => {
@@ -20,13 +23,23 @@ export default function CommentAdder({ setComments, article_id: articleId }) {
     setComments((currentComments) => {
       return [newComment, ...currentComments];
     });
+    setComNum((currentComNum) => currentComNum + 1);
     postComment(articleId, newComment)
-    .catch(() => {
-      alert("There was a problem posting your comment");
-      setComments((currentComments) => {
-        return currentComments.slice(1);
+      .then((comment) => {
+        setComments((currentComments) => {
+          return currentComments.slice(1);
+        });
+        setComments((currentComments) => {
+          return [comment, ...currentComments];
+        })
+      })
+      .catch(() => {
+        alert("There was a problem posting your comment");
+        setComments((currentComments) => {
+          return currentComments.slice(1);
+        });
+        setComNum((currentComNum) => currentComNum - 1);
       });
-    });
   };
 
   return (
@@ -44,5 +57,4 @@ export default function CommentAdder({ setComments, article_id: articleId }) {
       </button>
     </div>
   );
-};
-
+}

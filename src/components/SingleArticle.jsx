@@ -7,6 +7,7 @@ import CommentAdder from "./CommentAdder";
 
 export default function SingleArticle(article) {
   const [comments, setComments] = useState([]);
+  const [comNum, setComNum] = useState(comments.length > article.comment_count ? comments.length : article.comment_count);
 
   const creationDate =
     article.created_at.slice(11, 16) +
@@ -36,12 +37,12 @@ export default function SingleArticle(article) {
       <div className="Article-body">
         <p className="Article-text">{article.body}</p>
         <Vote {...article} />
-        <ExpandToggle {...article} comments={comments}>
-          <CommentAdder setComments={setComments} {...article} />
+        <ExpandToggle {...article} comments={comments} comNum={comNum}>
+          <CommentAdder setComments={setComments} {...article} setComNum={setComNum} />
           <CommentsList
             setComments={setComments}
             comments={comments}
-            {...article}
+            {...article} setComNum={setComNum}
           />
         </ExpandToggle>
       </div>
