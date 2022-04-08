@@ -64,3 +64,9 @@ export function postComment(articleId, newComment) {
       console.log(comment, "comment data in post response");
     });
 }
+
+export function deleteComment(commentId) {
+  return api.delete(`/comments/${commentId}`).then(() => {
+    console.log(`comment ${commentId} deleted`);
+  });
+}

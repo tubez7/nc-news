@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
 
-
-export default function CommentsList({ comment_count, article_id: articleId, setComments, comments }) {
+export default function CommentsList({
+  comment_count,
+  article_id: articleId,
+  setComments,
+  comments,
+  setComNum,
+}) {
   const [isLoading, setIsLoading] = useState(true);
- 
 
   useEffect(() => {
     getComments(articleId).then((commentsData) => {
-      setComments(commentsData);
+      setComments(commentsData.reverse());
       setIsLoading(false);
     });
   }, []);
@@ -23,9 +27,18 @@ export default function CommentsList({ comment_count, article_id: articleId, set
 
   return (
     <div>
-      {comments.map((comment) => {
-        return <CommentCard key={comment.comment_id} {...comment} />;
-      })}
+      {comments
+        .sort((a, b) => b.comment_id - a.comment_id)
+        .map((comment) => {
+          return (
+            <CommentCard
+              key={comment.comment_id}
+              {...comment}
+              setComments={setComments}
+              setComNum={setComNum}
+            />
+          );
+        })}
     </div>
   );
 }

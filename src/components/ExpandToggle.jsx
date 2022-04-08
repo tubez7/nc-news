@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-export default function ExpandToggle({ children, comments, comment_count }) {
+export default function ExpandToggle({ children, comNum }) {
   const [visible, setVisible] = useState(false);
+  
+  
 
-  const comNum = comments.length > comment_count ? comments.length : comment_count;
 
   const toggleVisible = () => {
     setVisible((currentVisible) => !currentVisible);
@@ -15,6 +16,7 @@ export default function ExpandToggle({ children, comments, comment_count }) {
         {visible ? "Hide comments" : `Show ${comNum} comments`}
       </button>
       {visible && children}
+     
     </div>
   );
 }
