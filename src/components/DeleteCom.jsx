@@ -21,7 +21,7 @@ export default function DeleteCom({ commentId, setComments, setComNum }) {
       );
     });
     deleteComment(commentId).catch((err) => {
-      setError(err);
+      setError(err); // will use when adding login functionality
       setComNum((currentComNum) => currentComNum + 1);
       alert("Unable to delete comment");
       setComments((currentComments) => {
@@ -35,8 +35,7 @@ export default function DeleteCom({ commentId, setComments, setComNum }) {
   return (
     <div>
       {commentId && <button onClick={handleClick}>Delete</button>}
-      <p>{commentId}</p>
-      {error && <p>Unable to delete comment</p>}
     </div>
   );
 };
+      
