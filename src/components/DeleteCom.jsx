@@ -7,7 +7,7 @@ export default function DeleteCom({ commentId, setComments, setComNum }) {
   let deletedCom = {};
 
   const handleClick = () => {
-    if (window.confirm("test")) {
+    if (window.confirm("Are you sure you wish to delete this comment?")) {
       setComments((currentComments) => {
         comIndexToDelete = currentComments.findIndex(
           (comment) => comment.comment_id === commentId
