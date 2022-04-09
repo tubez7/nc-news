@@ -16,15 +16,15 @@ export default function Nav() {
           <p>{loggedInUser.username}</p>
         </div>
         <div className="Nav-buttons">
-        <Link to="/articles">
-          <button className="Nav_Link">Articles</button>
-        </Link>
-        <Link to={`/users/${loggedInUser.username}`}>
-          <button className="Nav_Link">User Profile</button>
-        </Link>
-        <Link to="/topics">
-          <button  className="Nav_Link">Topics</button>
-        </Link>
+          <Link to="/articles">
+            <button className="Nav_Link">Articles</button>
+          </Link>
+          <Link to={`/users/${loggedInUser.username}`}>
+            <button className="Nav_Link">User Profile</button>
+          </Link>
+          <Link to="/topics">
+            <button className="Nav_Link">Topics</button>
+          </Link>
         </div>
       </div>
     </nav>

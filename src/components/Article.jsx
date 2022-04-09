@@ -12,17 +12,15 @@ export default function Article() {
 
   useEffect(() => {
     setIsLoading(true);
-    return getArticleById(articleId)
+    getArticleById(articleId)
       .then((articleData) => {
         setArticle(articleData);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.dir(err.response.status, "err in article catch block");
         setError(err.response.status);
-        console.log(error, "error state in catch");
+
         setIsLoading(false);
-        console.log(error, "error state in catch");
       });
   }, [articleId]);
 
@@ -44,12 +42,10 @@ export default function Article() {
       </>
     );
 
-    if (error)
+  if (error)
     return (
       <>
-        <h4>
-          OH DEAR! SOMETHING'S GONE WRONG!
-        </h4>
+        <h4>OH DEAR! SOMETHING'S GONE WRONG!</h4>
         <Link to="/">Return to Homepage</Link>
       </>
     );

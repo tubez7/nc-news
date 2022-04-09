@@ -10,8 +10,7 @@ export default function CommentCard({
   setComments,
   setComNum,
 }) {
-  console.log(comment_id, "needed for voting on later ticket");
-
+  
   let creationDate = "";
 
   if (created_at) {

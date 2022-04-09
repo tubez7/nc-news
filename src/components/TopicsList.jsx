@@ -16,21 +16,21 @@ export default function TopicsList({ setTopics, topics }) {
   if (isLoading) return <h4>PLEASE WAIT. TOPICS LOADING....</h4>;
 
   return (
-    <article className="topics-block">
+    <div className="topics-block">
       {topics.map((topic) => {
         return (
-          <>
-            <div className={`${topic.slug}`} key={topic.slug}>
+          <ul>
+            <li className={`${topic.slug}`} key={topic.slug}>
               <Link to={`/topics/${topic.slug}`}>
                 <h4>
                   {topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}
                 </h4>
               </Link>
               <p>{topic.description}</p>
-            </div>
-          </>
+            </li>
+          </ul>
         );
       })}
-    </article>
+    </div>
   );
 }
