@@ -36,12 +36,9 @@ export default function ArticleList({ order, sortBy }) {
     return (
       <>
         <h4 className="user-msg">
-          OH DEAR! WE DON'T CURRENTLY HAVE ANY ARTICLES FOR{" "}
-          {topic.toUpperCase()}
+          OH DEAR! WE DON'T CURRENTLY HAVE ANY ARTICLES FOR THAT TOPIC!
         </h4>
-        <Link className="user-msg" to="/">
-          Return to Homepage
-        </Link>
+        <Link className="user-msg" to="/">Return to Homepage</Link>
       </>
     );
 
