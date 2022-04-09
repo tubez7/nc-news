@@ -4,53 +4,43 @@ import ArticleCard from "./ArticleCard";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export default function ArticleList({order, sortBy}) {
+export default function ArticleList({ order, sortBy }) {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
   const { topic } = useParams();
   const [error, setError] = useState(null);
-  
-
 
   useEffect(() => {
-    console.log(topic, sortBy, order, "inside useEffect");
     setIsLoading(true);
     setError(null);
-     getArticles(topic, sortBy, order)
+    getArticles(topic, sortBy, order)
       .then((articlesData) => {
         setArticles(articlesData);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.dir(err.message, "error.msg in catch block triggered");
         setError(err.response.status);
-        console.log(error, "error state in catch")
-        console.dir(err.response);
         setIsLoading(false);
       });
   }, [topic, sortBy, order]);
 
   if (isLoading) return <h4>PLEASE WAIT. ARTICLES LOADING....</h4>;
 
- 
-
   if (error === 404)
     return (
       <>
         <h4>
-          OH DEAR! WE DON'T CURRENTLY HAVE ANY ARTICLES FOR {topic.toUpperCase()}
+          OH DEAR! WE DON'T CURRENTLY HAVE ANY ARTICLES FOR{" "}
+          {topic.toUpperCase()}
         </h4>
         <Link to="/">Return to Homepage</Link>
       </>
     );
 
-
-    if (error)
+  if (error)
     return (
       <>
-        <h4>
-          OH DEAR! SOMETHING'S GONE WRONG!
-        </h4>
+        <h4>OH DEAR! SOMETHING'S GONE WRONG!</h4>
         <Link to="/">Return to Homepage</Link>
       </>
     );
@@ -63,3 +53,4 @@ export default function ArticleList({order, sortBy}) {
     </article>
   );
 }
+

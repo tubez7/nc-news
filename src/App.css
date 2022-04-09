@@ -14,11 +14,17 @@
   }
 }
 
+@media screen and (max-width: 280px) {
+  .Nav-buttons {
+      width: 60px;
+  }
+}
+
 .font-link {
   font-family: "Libre Baskerville", serif;
 }
 
-.Nav_Bar {
+.Nav_Bar {  
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
@@ -33,6 +39,8 @@
 .Nav-buttons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .Nav_Link {
@@ -54,7 +62,6 @@
 .Avatar_Image {
   align-self: center;
   width: 70px;
-  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -113,6 +120,7 @@ input[type="text"] {
   max-width: 750px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .Topic-button {
@@ -177,11 +185,6 @@ input[type="text"] {
   margin-right: 0.5em;
 }
 
-.up-vote {
-}
-
-.down-vote {
-}
 
 textarea {
   position: relative;
@@ -197,19 +200,14 @@ textarea {
 
 .topics-block {
   display: block;
-
   overflow: auto;
   justify-content: space-between;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
-.coding {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0),
-    rgb(227, 203, 250)
-  );
+ul {
+  list-style-type: none;
+  background-color: rgb(227, 203, 250);
   margin-top: 1em;
   margin-bottom: 0.5em;
   margin-left: auto;
@@ -218,35 +216,7 @@ textarea {
   max-width: 750px;
 }
 
-.football {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0),
-    rgb(227, 203, 250)
-  );
 
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.5rem;
-  max-width: 750px;
-}
-
-.cooking {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0),
-    rgb(227, 203, 250)
-  );
-
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.5rem;
-  max-width: 750px;
-}
 
 .down-vote {
   font-size: large;

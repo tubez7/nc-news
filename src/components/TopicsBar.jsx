@@ -7,7 +7,7 @@ export default function TopicsBar({ topics, setTopics }) {
 
   useEffect(() => {
     setIsLoading(true);
-    return getTopics().then((topicsData) => {
+    getTopics().then((topicsData) => {
       setTopics(topicsData);
       setIsLoading(false);
     });
@@ -16,10 +16,10 @@ export default function TopicsBar({ topics, setTopics }) {
   if (isLoading) return <h4>PLEASE WAIT. TOPICS LOADING....</h4>;
 
   return (
-    <article className="Topic-selector">
+    <div className="Topic-selector">
       {topics.map((topic) => {
         return <TopicSelect key={topic.slug} {...topic} />;
       })}
-    </article>
+    </div>
   );
 }
