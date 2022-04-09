@@ -1,5 +1,5 @@
 const Header = () => {
-  return <h2 className="font-link">NC NEWS</h2>;
+  return <h1 className="font-link">NC NEWS</h1>;
 };
 
 export default Header;

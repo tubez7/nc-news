@@ -15,10 +15,15 @@
 }
 
 .font-link {
+  display: block;
   font-family: "Libre Baskerville", serif;
+  text-align: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right:auto;
 }
 
-.Nav_Bar {  
+.Nav_Bar {
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
@@ -28,6 +33,13 @@
   margin-right: auto;
   padding: 0.5rem;
   max-width: 750px;
+  align-content: center;
+  text-align: center;
+  
+}
+
+.User_Icon {
+  text-align: center;
 }
 
 .Nav-buttons {
@@ -54,7 +66,6 @@
 }
 
 .Avatar_Image {
-  align-self: center;
   width: 70px;
   border-radius: 50%;
 }
@@ -79,15 +90,6 @@
   flex-direction: column;
   align-content: center;
   padding: 1em;
-}
-
-input[type="text"] {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.75em;
-  overflow: auto;
-  position: relative;
-  max-width: 75%;
 }
 
 .Radio-order {
@@ -137,6 +139,12 @@ input[type="text"] {
   background-color: rgb(227, 203, 250);
 }
 
+.user-msg {
+  display: block;
+  text-align: center;
+  align-content: center;
+}
+
 .Article-card {
   border-style: dotted;
   border-color: rgb(124, 124, 124);
@@ -146,7 +154,7 @@ input[type="text"] {
   margin-left: 3rem;
   margin-right: 3rem;
   padding-left: 1%;
-  padding-right: 1%;
+  text-align: center;
 }
 
 .Article-heading {
@@ -160,6 +168,7 @@ input[type="text"] {
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
+  text-align: center;
 }
 
 .Article-body {
@@ -180,6 +189,8 @@ input[type="text"] {
 }
 
 textarea {
+  font-size: large;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   position: relative;
   display: block;
   overflow: auto;
@@ -188,7 +199,7 @@ textarea {
   margin-top: 1em;
   width: 90%;
   max-width: 700px;
-  background-color: rgb(237, 238, 234);
+  background-color: rgba(211, 211, 209, 0.72);
 }
 
 .topics-block {
@@ -197,7 +208,9 @@ textarea {
   justify-content: space-between;
   margin-left: 1rem;
   margin-right: 1rem;
+  text-align: center;
 }
+
 ul {
   list-style-type: none;
   background-color: rgb(227, 203, 250);
@@ -271,6 +284,10 @@ ul {
   margin-right: 1rem;
 }
 
+.Error-msg {
+  display: block;
+  text-align: center;
+  align-content: center;
+}
 
-
-
+  

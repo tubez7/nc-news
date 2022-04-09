@@ -15,8 +15,13 @@ export default function ArticleList({ order, sortBy }) {
     setError(null);
     getArticles(topic, sortBy, order)
       .then((articlesData) => {
-        setArticles(articlesData);
-        setIsLoading(false);
+        if (articlesData.length === 0) {
+          setError(404);
+          setIsLoading(false);
+        } else {
+          setArticles(articlesData);
+          setIsLoading(false);
+        }
       })
       .catch((err) => {
         setError(err.response.status);
@@ -24,24 +29,29 @@ export default function ArticleList({ order, sortBy }) {
       });
   }, [topic, sortBy, order]);
 
-  if (isLoading) return <h4>PLEASE WAIT. ARTICLES LOADING....</h4>;
+  if (isLoading)
+    return <h4 className="user-msg">PLEASE WAIT. ARTICLES LOADING....</h4>;
 
   if (error === 404)
     return (
       <>
-        <h4>
+        <h4 className="user-msg">
           OH DEAR! WE DON'T CURRENTLY HAVE ANY ARTICLES FOR{" "}
           {topic.toUpperCase()}
         </h4>
-        <Link to="/">Return to Homepage</Link>
+        <Link className="user-msg" to="/">
+          Return to Homepage
+        </Link>
       </>
     );
 
   if (error)
     return (
       <>
-        <h4>OH DEAR! SOMETHING'S GONE WRONG!</h4>
-        <Link to="/">Return to Homepage</Link>
+        <h4 className="user-msg">OH DEAR! SOMETHING'S GONE WRONG!</h4>
+        <Link className="user-msg" to="/">
+          Return to Homepage
+        </Link>
       </>
     );
 
@@ -53,4 +63,3 @@ export default function ArticleList({ order, sortBy }) {
     </article>
   );
 }
-

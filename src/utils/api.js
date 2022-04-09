@@ -43,7 +43,6 @@ export function updateVotes(articleId, voteChange) {
 };
 
 export function getComments(articleId, sort, order) {
-  console.log("comments api triggered");
   return api
     .get(`/articles/${articleId}/comments`, {
       params: {
@@ -70,4 +69,5 @@ export function deleteComment(commentId) {
     console.log(`comment ${commentId} deleted`);
   });
 };
+  
 

@@ -13,7 +13,7 @@ export default function TopicsList({ setTopics, topics }) {
     });
   }, []);
 
-  if (isLoading) return <h4>PLEASE WAIT. TOPICS LOADING....</h4>;
+  if (isLoading) return <h4 className="user-msg">PLEASE WAIT. TOPICS LOADING....</h4>;
 
   return (
     <div className="topics-block">

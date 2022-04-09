@@ -47,8 +47,8 @@ export default function CommentAdder({
       <textarea
         id="add_comment"
         name="add_comment"
-        rows="10"
-        placeholder="Please enter your comment here...."
+        rows="6"
+        placeholder="Leave a comment...."
         onChange={handleChange}
         value={newBody}
       ></textarea>
