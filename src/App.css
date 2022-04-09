@@ -14,12 +14,6 @@
   }
 }
 
-@media screen and (max-width: 280px) {
-  .Nav-buttons {
-      width: 60px;
-  }
-}
-
 .font-link {
   font-family: "Libre Baskerville", serif;
 }
@@ -185,7 +179,6 @@ input[type="text"] {
   margin-right: 0.5em;
 }
 
-
 textarea {
   position: relative;
   display: block;
@@ -215,8 +208,6 @@ ul {
   padding: 0.5rem;
   max-width: 750px;
 }
-
-
 
 .down-vote {
   font-size: large;
@@ -279,3 +270,7 @@ ul {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+
+
+
