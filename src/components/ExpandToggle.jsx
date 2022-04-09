@@ -16,7 +16,4 @@ export default function ExpandToggle({ children, comNum }) {
       {visible && children}
     </div>
   );
-}
-
-
-     
+}    
