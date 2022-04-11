@@ -3,17 +3,17 @@ import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
 
 export default function CommentsList({
-  comment_count,
   article_id: articleId,
   setComments,
   comments,
   setComNum,
+  comNum,
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getComments(articleId).then((commentsData) => {
-      setComments(commentsData.reverse());
+      setComments(commentsData.sort((a, b) => b.comment_id - a.comment_id));
       setIsLoading(false);
     });
   }, []);
@@ -21,14 +21,13 @@ export default function CommentsList({
   if (isLoading)
     return (
       <>
-        <p>{comment_count} comments loading ....</p>
+        <p>{comNum} comments loading ....</p>
       </>
     );
 
   return (
     <div>
       {comments
-        .sort((a, b) => b.comment_id - a.comment_id)
         .map((comment) => {
           return (
             <CommentCard
@@ -42,3 +41,5 @@ export default function CommentsList({
     </div>
   );
 }
+        
+  

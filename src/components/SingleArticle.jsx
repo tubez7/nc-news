@@ -43,6 +43,7 @@ export default function SingleArticle(article) {
             setComments={setComments}
             comments={comments}
             {...article} setComNum={setComNum}
+            comNum={comNum}
           />
         </ExpandToggle>
       </div>
