@@ -28,10 +28,10 @@ export default function CommentsList({
   return (
     <div>
       {comments
-        .map((comment) => {
+        .map((comment, i) => {
           return (
             <CommentCard
-              key={comment.comment_id}
+              key={comment.comment_id ?? i}
               {...comment}
               setComments={setComments}
               setComNum={setComNum}
@@ -41,5 +41,6 @@ export default function CommentsList({
     </div>
   );
 }
+      
         
   
