@@ -12,6 +12,7 @@ export default function CommentsList({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getComments(articleId).then((commentsData) => {
       setComments(commentsData.sort((a, b) => b.comment_id - a.comment_id));
       setIsLoading(false);

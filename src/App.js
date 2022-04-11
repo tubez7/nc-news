@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage.jsx";
 import Article from "./components/Article";
 import TopicsList from "./components/TopicsList";
+import Users from "./components/Users";
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
             element={<Home topics={topics} setTopics={setTopics} />}
           />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </div>
     </UserContext.Provider>

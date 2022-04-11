@@ -19,8 +19,8 @@ export default function Nav() {
           <Link to="/articles">
             <button className="Nav_Link">Articles</button>
           </Link>
-          <Link to={`/users/${loggedInUser.username}`}>
-            <button className="Nav_Link">User Profile</button>
+          <Link to={"/users"}>
+            <button className="Nav_Link">User Profiles</button>
           </Link>
           <Link to="/topics">
             <button className="Nav_Link">Topics</button>
