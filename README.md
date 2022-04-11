@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Northcoders News App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://richard-nc-news.netlify.app
 
-## Available Scripts
+The above link will take you to the hosted version of this app. This app was built with React as a front-end project for the Northcoders coding bootcamp. The user interface was built and designed to be optimised on most mobile device displays but will upscale to function as a standard website too. It connects to the NC News API which was also built for the Northocders bootcamp as a back-end course project.
 
-In the project directory, you can run:
+Link: https://richard-nc-news.herokuapp.com/api \
+Github: https://github.com/tubez7/backend-nc-news
 
-### `npm start`
+The app will currently allow you to read articles which can be filtered by topic, ordered by various criteria (eg - date of publication, author's username etc), and sorted in either ascending or descending order.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Each article can be up-voted and down-voted by the user and a list of comments for the article can be read too. A user is able to delete any comment from the database and is also able to add new comments by posting as the registered user "weegembump".
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Future Updates
+As an ongoing work in progress, some of the features and functionality that will hopefully be incorporated and integrated into the app in conjunction with the back-end API include:
+- A user profiles page 
+- Functionality to sign in as different user
+- Sign-up as new user
+- Voting on an individual comment
+- Comment deletion restricted to the original comment author
+- Improved user interface/styling with added CSS framework and library integration
+- Pagination and limits for articles and comments rendered on a single page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Set-up & Local Installation 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Fork and clone the project
+Fork the repo and clone the forked repo on your computer by running the following command from your chosen local directory:
+```
+$ git clone /github-project-url/
+``` 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Install dependencies
+From the root directory of the project run the following command: 
+```
+$ npm install
+``` 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## View the App on a Local Server
+```
+$ npm start
+``` 
 
-### `npm run eject`
+## Create a Production Build
+Run the commands:
+```
+$ npm build
+``` 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Minimum Requirements
+You will need to make sure you have installed `Node.js v10.19.0` or above in order to run the project on your machine.
