@@ -19,7 +19,7 @@ As an ongoing work in progress, some of the features and functionality that will
 - Sign-up as new user/user creation
 - Voting on an individual comment
 - Users can post a new article
--Authorised user can delete an article
+- Authorised user can delete an article
 - Improved user interface/styling with added CSS framework and library integration
 - Pagination and limits for articles and comments rendered on a single page
 
