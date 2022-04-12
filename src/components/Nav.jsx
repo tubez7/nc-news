@@ -1,26 +1,48 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/user-context";
 
-export default function Nav() {
-  const { loggedInUser } = useContext(UserContext);
+export default function Nav({ loggedIn, setLoggedIn, defaultUser }) {
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setLoggedInUser(defaultUser);
+    setLoggedIn(false);
+    navigate("/");
+  };
+
   return (
     <nav className="Nav_Bar">
       <div className="Nav_Bar_Items">
         <div className="User_Icon">
           <img
-            src={loggedInUser.avatar_url}
+            src={loggedInUser.avatarUrl}
             className="Avatar_Image"
             alt="Profile for the logged-in user"
           />
-          <p>{loggedInUser.username}</p>
+          {loggedIn && (
+            <Link to={`/users/${loggedInUser.username}`}>
+              <p>{loggedInUser.username}</p>
+            </Link>
+          )}
+          {!loggedIn && (
+            <Link to="/users">
+              <p>{loggedInUser.username}</p>
+            </Link>
+          )}
         </div>
+        {loggedIn && (
+          <p className="logout" onClick={handleClick}>
+            Logout
+          </p>
+        )}
         <div className="Nav-buttons">
           <Link to="/articles">
             <button className="Nav_Link">Articles</button>
           </Link>
-          <Link to={`/users/${loggedInUser.username}`}>
-            <button className="Nav_Link">User Profile</button>
+          <Link to={"/users"}>
+            <button className="Nav_Link">User Profiles</button>
           </Link>
           <Link to="/topics">
             <button className="Nav_Link">Topics</button>
@@ -30,5 +52,3 @@ export default function Nav() {
     </nav>
   );
 }
-
-//conditional logic with user profile? IF LOGGED IN USERNAME IS NOT THE DEFAULT, LINK TO USERPROFILE PAGE NOT THE LOGIN PAGE.

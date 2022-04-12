@@ -1,6 +1,11 @@
 import { deleteComment } from "../utils/api";
 
-export default function DeleteCom({ commentId, setComments, setComNum }) {
+
+export default function DeleteCom({
+  commentId,
+  setComments,
+  setComNum,
+}) {
 
   let comIndexToDelete = 0;
 

@@ -9,16 +9,17 @@ Github: https://github.com/tubez7/backend-nc-news
 
 The app will currently allow you to read articles which can be filtered by topic, ordered by various criteria (eg - date of publication, author's username etc), and sorted in either ascending or descending order.
 
-Each article can be up-voted and down-voted by the user and a list of comments for the article can be read too. A user is able to delete any comment from the database and is also able to add new comments by posting as the registered user "weegembump".
+The app will allow you to access a user profile page and log in as any of the pre-registered users. A user can log out from any point on the app and will be redirected back to the homepage.
+
+Each article can be up-voted and down-voted by the user and a list of comments for the article can be read too. A user is only able to delete a comment from the database if the username of the logged in user matches that of the original comment's author. It is also possible to add a comment to any article provided the user has logged in as any one of the pre-registered users.
 
 
 ## Future Updates
 As an ongoing work in progress, some of the features and functionality that will hopefully be incorporated and integrated into the app in conjunction with the back-end API include:
-- A user profiles page 
-- Functionality to sign in as different user
-- Sign-up as new user
+- Sign-up as new user/user creation
 - Voting on an individual comment
-- Comment deletion restricted to the original comment author
+- Users can post a new article
+-Authorised user can delete an article
 - Improved user interface/styling with added CSS framework and library integration
 - Pagination and limits for articles and comments rendered on a single page
 

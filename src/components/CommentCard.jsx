@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import DeleteCom from "./DeleteCom";
+import { useContext } from "react";
+import { UserContext } from "../contexts/user-context";
 
 export default function CommentCard({
   comment_id,
@@ -10,7 +12,9 @@ export default function CommentCard({
   setComments,
   setComNum,
 }) {
-  
+
+  const { loggedInUser } = useContext(UserContext);
+
   let creationDate = "";
 
   if (created_at) {
@@ -45,11 +49,11 @@ export default function CommentCard({
           </>
         )}
       </div>
-      <DeleteCom
+      {author === loggedInUser.username && <DeleteCom
         commentId={comment_id}
         setComments={setComments}
         setComNum={setComNum}
-      />
+      />}
     </div>
   );
 }

@@ -69,5 +69,14 @@ export function deleteComment(commentId) {
     console.log(`comment ${commentId} deleted`);
   });
 };
+
+export function getUsers() {
+  return api
+  .get("/users").then(({data: {users}}) => {
+    return users;
+  });
+};
+  
+    
   
 

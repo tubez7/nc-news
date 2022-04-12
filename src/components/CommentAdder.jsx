@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { postComment } from "../utils/api";
+import { UserContext } from "../contexts/user-context";
 
 export default function CommentAdder({
   setComments,
-  article_id: articleId,
+  articleId,
   setComNum,
+  loggedIn,
 }) {
   const [newBody, setNewBody] = useState("");
+  const { loggedInUser } = useContext(UserContext);
 
   const handleChange = (e) => {
     setNewBody(e.target.value);
@@ -15,7 +18,7 @@ export default function CommentAdder({
   const handleSubmit = (e) => {
     e.preventDefault();
     const newComment = {
-      username: "weegembump",
+      username: loggedInUser.username,
       body: newBody,
     };
     setNewBody("");
@@ -31,7 +34,7 @@ export default function CommentAdder({
         });
         setComments((currentComments) => {
           return [comment, ...currentComments];
-        })
+        });
       })
       .catch(() => {
         alert("There was a problem posting your comment");
@@ -41,6 +44,8 @@ export default function CommentAdder({
         setComNum((currentComNum) => currentComNum - 1);
       });
   };
+
+  if (!loggedIn) return <p>You must be logged in to post a comment</p>;
 
   return (
     <div>
