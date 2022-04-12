@@ -3,7 +3,7 @@ import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
 
 export default function CommentsList({
-  article_id: articleId,
+  articleId,
   setComments,
   comments,
   setComNum,

@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/user-context";
 
-
-export default function Nav({loggedIn, setLoggedIn, defaultUser}) {
+export default function Nav({ loggedIn, setLoggedIn, defaultUser }) {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -11,7 +10,7 @@ export default function Nav({loggedIn, setLoggedIn, defaultUser}) {
     setLoggedInUser(defaultUser);
     setLoggedIn(false);
     navigate("/");
-  }
+  };
 
   return (
     <nav className="Nav_Bar">
@@ -22,10 +21,22 @@ export default function Nav({loggedIn, setLoggedIn, defaultUser}) {
             className="Avatar_Image"
             alt="Profile for the logged-in user"
           />
-          {loggedIn && <Link to={`/users/${loggedInUser.username}`}><p>{loggedInUser.username}</p></Link>}
-          {!loggedIn && <Link to="/users"><p>{loggedInUser.username}</p></Link>}
+          {loggedIn && (
+            <Link to={`/users/${loggedInUser.username}`}>
+              <p>{loggedInUser.username}</p>
+            </Link>
+          )}
+          {!loggedIn && (
+            <Link to="/users">
+              <p>{loggedInUser.username}</p>
+            </Link>
+          )}
         </div>
-        {loggedIn && <p className="logout" onClick={handleClick}>Logout</p>}
+        {loggedIn && (
+          <p className="logout" onClick={handleClick}>
+            Logout
+          </p>
+        )}
         <div className="Nav-buttons">
           <Link to="/articles">
             <button className="Nav_Link">Articles</button>
@@ -41,4 +52,3 @@ export default function Nav({loggedIn, setLoggedIn, defaultUser}) {
     </nav>
   );
 }
-

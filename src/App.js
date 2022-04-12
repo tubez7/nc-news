@@ -41,7 +41,7 @@ function App() {
             path="/articles"
             element={<Home topics={topics} setTopics={setTopics} />}
           />
-          <Route path="/articles/:article_id" element={<Article />} />
+          <Route path="/articles/:article_id" element={<Article loggedIn={loggedIn} />} />
           <Route
             path="/topics"
             element={<TopicsList topics={topics} setTopics={setTopics} />}

@@ -4,7 +4,7 @@ import { getArticleById } from "../utils/api";
 import SingleArticle from "./SingleArticle";
 import { Link } from "react-router-dom";
 
-export default function Article() {
+export default function Article({loggedIn}) {
   const [isLoading, setIsLoading] = useState(true);
   const { article_id: articleId } = useParams();
   const [article, setArticle] = useState({});
@@ -19,7 +19,6 @@ export default function Article() {
       })
       .catch((err) => {
         setError(err.response.status);
-
         setIsLoading(false);
       });
   }, [articleId]);
@@ -50,5 +49,6 @@ export default function Article() {
       </>
     );
 
-  return <SingleArticle {...article} />;
+  return <SingleArticle {...article} loggedIn={loggedIn} />;
 }
+

@@ -1,4 +1,5 @@
 export default function SearchBar({ setSortBy, setOrder, order }) {
+
   const selectSort = (e) => {
     setSortBy(e.target.value);
   };
@@ -10,7 +11,7 @@ export default function SearchBar({ setSortBy, setOrder, order }) {
   return (
     <nav className="Nav_Articles">
       <section className="Articles_sort">
-        <label for="ArticleList">Sort by: </label>
+        <label htmlFor="ArticleList">Sort by: </label>
         <select
           onChange={selectSort}
           className="select-by"
@@ -26,17 +27,17 @@ export default function SearchBar({ setSortBy, setOrder, order }) {
         </select>
 
         <div className="Radio-order">
-          <label for="DESC">Desc</label>
+          <label htmlFor="DESC">Desc</label>
           <input
-            onClick={selectOrder}
+            onChange={selectOrder}
             type="radio"
             name="sort"
             value="DESC"
             checked={order.includes("DESC")}
           ></input>
-          <label for="ASC">Asc</label>
+          <label htmlFor="ASC">Asc</label>
           <input
-            onClick={selectOrder}
+            onChange={selectOrder}
             type="radio"
             name="sort"
             value="ASC"

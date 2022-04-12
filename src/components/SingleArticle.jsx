@@ -5,50 +5,58 @@ import CommentsList from "./CommentsList";
 import ExpandToggle from "./ExpandToggle";
 import CommentAdder from "./CommentAdder";
 
-export default function SingleArticle(article) {
+export default function SingleArticle({
+  comment_count,
+  created_at,
+  title,
+  author,
+  topic,
+  body,
+  votes,
+  article_id,
+  loggedIn,
+}) {
+  
   const [comments, setComments] = useState([]);
   const [comNum, setComNum] = useState(
-    comments.length > article.comment_count
-      ? comments.length
-      : article.comment_count
+    comments.length > comment_count ? comments.length : comment_count
   );
 
   const creationDate =
-    article.created_at.slice(11, 16) +
+    created_at.slice(11, 16) +
     " - " +
-    article.created_at.slice(8, 10) +
+    created_at.slice(8, 10) +
     "-" +
-    article.created_at.slice(5, 7) +
+    created_at.slice(5, 7) +
     "-" +
-    article.created_at.slice(0, 4);
+    created_at.slice(0, 4);
 
   return (
     <article className="Article-page">
       <section className="Article-heading">
-        <h2>{article.title}</h2>
+        <h2>{title}</h2>
         <div>
-          <Link to={`/api/users/${article.author}`}>
-            <h3>{article.author}</h3>
+          <Link to={`/api/users/${author}`}>
+            <h3>{author}</h3>
           </Link>
           <h4>Posted @: {creationDate}</h4>
-          <Link to={`/topics/${article.topic}`}>
-            <h4>
-              {article.topic.charAt(0).toUpperCase() + article.topic.slice(1)}
-            </h4>
+          <Link to={`/topics/${topic}`}>
+            <h4>{topic.charAt(0).toUpperCase() + topic.slice(1)}</h4>
           </Link>
         </div>
       </section>
       <div className="Article-body">
-        <p className="Article-text">{article.body}</p>
-        <Vote {...article} />
-        <ExpandToggle {...article} comments={comments} comNum={comNum}>
+        <p className="Article-text">{body}</p>
+        <Vote articleId={article_id} votes={votes} />
+        <ExpandToggle comments={comments} comNum={comNum}>
           <CommentAdder
-            {...article}
+            articleId={article_id}
             setComments={setComments}
             setComNum={setComNum}
+            loggedIn={loggedIn}
           />
           <CommentsList
-            {...article}
+            articleId={article_id}
             setComments={setComments}
             comments={comments}
             setComNum={setComNum}

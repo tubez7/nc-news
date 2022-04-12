@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { updateVotes } from "../utils/api";
 
-const Vote = ({ votes, article_id }) => {
+const Vote = ({ votes, articleId }) => {
   
   const [voteChange, setVoteChange] = useState(0);
 
@@ -10,7 +10,7 @@ const Vote = ({ votes, article_id }) => {
       return currentVote + voteClick;
     });
 
-    updateVotes(article_id, voteClick).catch(() => {
+    updateVotes(articleId, voteClick).catch(() => {
       alert("There was a problem registering your vote. Please try again.");
       setVoteChange((currentVote) => {
         return currentVote - voteClick;
