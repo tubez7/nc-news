@@ -16,7 +16,6 @@ export default function SingleArticle({
   article_id,
   loggedIn,
 }) {
-  
   const [comments, setComments] = useState([]);
   const [comNum, setComNum] = useState(
     comments.length > comment_count ? comments.length : comment_count

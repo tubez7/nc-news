@@ -28,20 +28,16 @@ export default function CommentsList({
 
   return (
     <div>
-      {comments
-        .map((comment, i) => {
-          return (
-            <CommentCard
-              key={comment.comment_id ?? i}
-              {...comment}
-              setComments={setComments}
-              setComNum={setComNum}
-            />
-          );
-        })}
+      {comments.map((comment, i) => {
+        return (
+          <CommentCard
+            key={comment.comment_id ?? i}
+            {...comment}
+            setComments={setComments}
+            setComNum={setComNum}
+          />
+        );
+      })}
     </div>
   );
 }
-      
-        
-  
