@@ -301,6 +301,14 @@ ul {
   align-content: center;
 }
 
+.profile-load {
+  text-align: center;
+}
+
+.users-head {
+  text-align: center;
+}
+
 .users-block {
   display: grid;
   row-gap: 1em;
@@ -313,6 +321,7 @@ ul {
 }
   
 .user-card {
+  text-align: center;
   height: 100%;
   width: 100%;
   margin-top: 0.5em;

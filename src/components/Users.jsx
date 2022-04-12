@@ -7,7 +7,6 @@ export default function Users({setLoggedIn}) {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-
   useEffect(() => {
     setIsLoading(true);
     getUsers().then((usersData) => {
@@ -19,13 +18,13 @@ export default function Users({setLoggedIn}) {
   if (isLoading)
     return (
       <>
-        <p>Please wait...User Profiles loading</p>
+        <p className="profile-load">Please wait...User Profiles loading</p>
       </>
     );
 
   return (
     <>
-      <h3>NC News Registered Users</h3>
+      <h3 className="users-head">NC News Registered Users</h3>
       <div className="users-block">
         {users.map((user) => {
           return <UserCard key={user.username} {...user} setLoggedIn={setLoggedIn} />;
