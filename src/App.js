@@ -14,11 +14,14 @@ import Users from "./components/Users";
 
 function App() {
 
-  const [loggedInUser, setLoggedInUser] = useState({
+  const defaultUser = {
     username: "Login To NC News",
-    avatar_url:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg",
-  });
+    avatarUrl:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/600px-Gull_portrait_ca_usa.jpg"
+  };
+
+  const [loggedInUser, setLoggedInUser] = useState(defaultUser);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const [topics, setTopics] = useState([]);
   
@@ -27,7 +30,7 @@ function App() {
     <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       <div className="App">
         <Header />
-        <Nav />
+        <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} defaultUser={defaultUser} />
         <Routes>
           <Route
             path="/"
@@ -48,7 +51,7 @@ function App() {
             element={<Home topics={topics} setTopics={setTopics} />}
           />
           <Route path="*" element={<ErrorPage />} />
-          <Route path="/users" element={<Users />} />
+          <Route path="/users" element={<Users setLoggedIn={setLoggedIn} />} />
         </Routes>
       </div>
     </UserContext.Provider>

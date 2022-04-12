@@ -1,18 +1,16 @@
-import { UserContext } from "../contexts/user-context.js";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { getUsers } from "../utils/api.js";
 
-export default function Users() {
+import UserCard from "./UserCard.jsx";
+
+export default function Users({setLoggedIn}) {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { setLoggedInUser } = useContext(UserContext);
 
-  console.log("user context", UserContext);
 
   useEffect(() => {
     setIsLoading(true);
     getUsers().then((usersData) => {
-      console.log(usersData);
       setUsers(usersData);
       setIsLoading(false);
     });
@@ -26,10 +24,13 @@ export default function Users() {
     );
 
   return (
-    <div className="user_card">
-      {users.map((user) => {
-        return <p key={user.username}>{user.username}</p>;
-      })}
-    </div>
+    <>
+      <h3>NC News Registered Users</h3>
+      <div className="users-block">
+        {users.map((user) => {
+          return <UserCard key={user.username} {...user} setLoggedIn={setLoggedIn} />;
+        })}
+      </div>
+    </>
   );
 }

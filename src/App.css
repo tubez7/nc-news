@@ -24,6 +24,7 @@
 }
 
 .Nav_Bar {
+  position: relative;
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
@@ -40,6 +41,16 @@
 
 .User_Icon {
   text-align: center;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.logout {
+  text-decoration: underline;
+  font-weight: 600;
+  position: absolute;
+  top: 0px;
+  right: 1em;
 }
 
 .Nav-buttons {
@@ -290,4 +301,42 @@ ul {
   align-content: center;
 }
 
+.users-block {
+  display: grid;
+  row-gap: 1em;
+  column-gap: 1em;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  justify-items: center;
+}
+  
+.user-card {
+  height: 100%;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  background-color: rgb(227, 203, 250);
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+
+.login-user {
+  cursor: pointer;
+  font-size: 3vw;
+  text-decoration: underline;
+}
+
+.login-user:hover {
+  font-weight: bold;
+}
+
+.user-avatar {
+  width: 5em;
+  height: 5em;
+} 
+  
   
