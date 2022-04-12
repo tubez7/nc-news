@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../contexts/user-context";
+import { useNavigate } from "react-router-dom";
 
 export default function UserCard({
   username,
@@ -7,10 +8,13 @@ export default function UserCard({
   setLoggedIn,
 }) {
   const { setLoggedInUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setLoggedInUser({ username, avatarUrl });
     setLoggedIn(true);
+    navigate("/");
+
   };
   
   return (
