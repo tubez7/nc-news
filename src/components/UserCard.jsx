@@ -13,7 +13,7 @@ export default function UserCard({
   const handleClick = () => {
     setLoggedInUser({ username, avatarUrl });
     setLoggedIn(true);
-    navigate("/");
+    navigate(-1);
 
   };
   
