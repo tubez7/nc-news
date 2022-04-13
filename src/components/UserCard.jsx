@@ -7,6 +7,7 @@ export default function UserCard({
   avatar_url: avatarUrl,
   setLoggedIn,
 }) {
+  
   const { setLoggedInUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -14,7 +15,6 @@ export default function UserCard({
     setLoggedInUser({ username, avatarUrl });
     setLoggedIn(true);
     navigate(-1);
-
   };
   
   return (
@@ -30,3 +30,4 @@ export default function UserCard({
     </div>
   );
 }
+

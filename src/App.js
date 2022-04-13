@@ -36,7 +36,6 @@ function App() {
             path="/"
             element={<Home topics={topics} setTopics={setTopics} />}
           />
-         
           <Route
             path="/articles"
             element={<Home topics={topics} setTopics={setTopics} />}
@@ -50,12 +49,13 @@ function App() {
             path="/topics/:topic"
             element={<Home topics={topics} setTopics={setTopics} />}
           />
-          <Route path="*" element={<ErrorPage />} />
           <Route path="/users" element={<Users setLoggedIn={setLoggedIn} />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </UserContext.Provider>
   );
 }
+         
 
 export default App;

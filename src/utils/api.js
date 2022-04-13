@@ -65,9 +65,7 @@ export function postComment(articleId, newComment) {
 
 export function deleteComment(commentId) {
   return api
-  .delete(`/comments/${commentId}`).then(() => {
-    console.log(`comment ${commentId} deleted`);
-  });
+  .delete(`/comments/${commentId}`)
 };
 
 export function getUsers() {
