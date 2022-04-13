@@ -3,6 +3,8 @@ import DeleteCom from "./DeleteCom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/user-context";
 
+import CommVote from "./CommVote";
+
 export default function CommentCard({
   comment_id,
   author,
@@ -12,7 +14,6 @@ export default function CommentCard({
   setComments,
   setComNum,
 }) {
-
   const { loggedInUser } = useContext(UserContext);
 
   let creationDate = "";
@@ -39,21 +40,15 @@ export default function CommentCard({
         </h5>
       </section>
       <p className="comment-body">{body}</p>
+      {typeof votes === "number" && <CommVote votes={votes} commentId={comment_id} />}
 
-      <div className="comment-vote">
-        {typeof votes === "number" && (
-          <>
-            <h5>{votes} Votes</h5>
-            <button className="comment-up-vote">+</button>
-            <button className="comment-down-vote">-</button>
-          </>
-        )}
-      </div>
-      {author === loggedInUser.username && <DeleteCom
-        commentId={comment_id}
-        setComments={setComments}
-        setComNum={setComNum}
-      />}
+      {author === loggedInUser.username && (
+        <DeleteCom
+          commentId={comment_id}
+          setComments={setComments}
+          setComNum={setComNum}
+        />
+      )}
     </div>
   );
 }
