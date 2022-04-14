@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const ArticleCard = ({
   article_id,
   title,
-  body,
   topic,
   author,
   votes,
   created_at,
   comment_count,
 }) => {
+
   const creationDate =
     created_at.slice(11, 16) +
     " - " +
@@ -18,27 +18,22 @@ const ArticleCard = ({
     created_at.slice(5, 7) +
     "-" +
     created_at.slice(0, 4);
-
+   
   return (
-    <article className="Article-card">
+    <article className="article-card">
       <Link to={`/articles/${article_id}`}>
-        <h3 className="Itemcard-title">{title}</h3>
+        <h3 className="article-title">{title}</h3>
       </Link>
       <Link to={`/topics/${topic}`}>
-        <h4 className="Itemcard-topic">
+        <h4 className="article-topic">
           {topic.charAt(0).toUpperCase() + topic.slice(1)}
         </h4>
       </Link>
-      <Link to={`/api/users/${author}`}>
-        <h4 className="Itemcard-author">{author}</h4>
-      </Link>
-      <h5 className="Itemcard-created-at">Posted: {creationDate}</h5>
-      <p className="Itemcard-body">{body}</p>
-      <h5 className="Itemcard-votes">{votes} Votes</h5>
-
-      <h5 className="Itemcard-co-count">{comment_count} Comments </h5>
+      <h5 className="article-created">Posted by <Link to={`/api/users/${author}`}>{author}</Link> @: {creationDate}</h5>
+      <h5 className="article-comcount">{comment_count} Comments || {votes} {votes === 1 || -1 ? "Vote" : "Votes"}</h5>
     </article>
   );
 };
+      
 
 export default ArticleCard;
