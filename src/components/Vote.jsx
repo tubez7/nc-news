@@ -20,7 +20,7 @@ const Vote = ({ votes, articleId }) => {
 
   return (
     <div className="vote-block">
-      <h4>{votes + voteChange} Votes</h4>
+      <h4>{votes + voteChange} {votes + voteChange === 1 || votes + voteChange === -1 ? "Vote" : "Votes"}</h4>
       <button
         className="up-vote"
         disabled={voteChange > 0}

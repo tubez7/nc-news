@@ -314,12 +314,13 @@ ul {
 .votedel-block {
   display: flex;
   text-align: center;
-  justify-content:space-evenly;
-  align-items: center;
+  justify-content:center;
+  align-items: center;  
 }
 
 #com-delete {
   height: 2em;
+  margin-left: 0.25em;
 }
 
 button {

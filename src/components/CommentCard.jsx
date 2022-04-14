@@ -47,7 +47,7 @@ export default function CommentCard({
 
         {author === loggedInUser.username && (
           <>
-            <h5>||</h5>
+            <h5>--||--</h5>
             <DeleteCom
               commentId={comment_id}
               setComments={setComments}
