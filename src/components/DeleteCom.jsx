@@ -35,12 +35,12 @@ export default function DeleteCom({
       });
     } else {
       return (
-        <div>{commentId && <button onClick={handleClick}>Delete</button>}</div>
+        <div className="com-delete">{commentId && <button onClick={handleClick}>Delete</button>}</div>
       );
     }
   };
 
   return (
-    <div>{commentId && <button onClick={handleClick}>Delete</button>}</div>
+    <div className="com-delete">{commentId && <button onClick={handleClick}>Delete</button>}</div>
   );
 }

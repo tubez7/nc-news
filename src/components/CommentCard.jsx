@@ -40,15 +40,22 @@ export default function CommentCard({
         </h5>
       </section>
       <p className="comment-body">{body}</p>
-      {typeof votes === "number" && <CommVote votes={votes} commentId={comment_id} />}
+      <div className="votedel-block">
+        {typeof votes === "number" && (
+          <CommVote votes={votes} commentId={comment_id} />
+        )}
 
-      {author === loggedInUser.username && (
-        <DeleteCom
-          commentId={comment_id}
-          setComments={setComments}
-          setComNum={setComNum}
-        />
-      )}
+        {author === loggedInUser.username && (
+          <>
+            <h5 className="vote-separator">-||-</h5>
+            <DeleteCom
+              commentId={comment_id}
+              setComments={setComments}
+              setComNum={setComNum}
+            />
+          </>
+        )}
+      </div>
     </div>
   );
 }

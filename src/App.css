@@ -58,6 +58,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: auto;
+  align-items: center;
 }
 
 .Nav_Link {
@@ -65,6 +66,9 @@
   margin: auto;
   color: black;
   padding: 14px 28px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  /* min-width: 150px; */
   font-size: 90%;
   cursor: pointer;
   border-radius: 5px;
@@ -131,6 +135,7 @@
 }
 
 .Topic-button {
+  background-color: rgb(241, 241, 236);
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
@@ -156,16 +161,18 @@
   align-content: center;
 }
 
-.Article-card {
+.article-card {
   border-style: dotted;
   border-color: rgb(124, 124, 124);
   background-color: beige;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 1%;
+  padding-right: 1%;
   text-align: center;
+  max-width: 850px;
 }
 
 .Article-heading {
@@ -208,6 +215,7 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
+  margin-bottom: 1em;
   width: 90%;
   max-width: 700px;
   background-color: rgba(211, 211, 209, 0.72);
@@ -255,44 +263,82 @@ ul {
   align-items: center;
 }
 
+.comment-card {
+  border-style: dotted;
+  border-color: rgb(124, 124, 124);
+  background-color: beige;
+  max-width: 850px;
+  padding: 1em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .comment-body {
-  font-size: 0.8em;
-  text-align: left;
+  text-align: justify;
 }
 
 .comment-toggle {
   margin-top: 1em;
 }
 
-.comment-vote {
-  display: flex;
-  justify-content: center;
+.votedel-block {
+  display:flex;
+  text-align: center;
   align-items: center;
-  font-size: medium;
+}
+
+.comment-vote {
+  display:flex;
+  flex: 1;
+  max-width: 7em;
+  margin: auto;
+  align-items: center;
 }
 
 .comment-up-vote {
-  margin-left: 1em;
-  margin-right: 0.25em;
+  font-size: 90%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  margin-left: 0.1em;
   height: 2em;
   width: 2em;
 }
 
 .comment-down-vote {
-  margin-left: 0.25em;
-  margin-right: 0.25em;
+  font-size: 90%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  margin-left: 0.1em;
+  margin-right: 1.5em;
   height: 2em;
   width: 2em;
 }
 
-.comment-card {
-  border-style: dotted;
-  border-color: rgb(124, 124, 124);
-  padding: 1em;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.com-delete {
+  flex:1;
+  max-width: 7em;
+  margin-right:auto;
+}
+
+.vote-separator {
+  max-width: 10%;
+  margin-right: auto;
+ }
+
+button {
+  background-color: rgb(211, 209, 209);
+  font-size: 90%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;  
+}
+ 
+button:hover {
+  background-color: rgb(224, 224, 224);
 }
 
 .Error-msg {
@@ -347,5 +393,8 @@ ul {
   width: 5em;
   height: 5em;
 } 
+  
+  
+
   
   

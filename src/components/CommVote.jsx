@@ -20,7 +20,7 @@ export default function CommVote({ votes, commentId }) {
 
   return (
     <div className="comment-vote">
-      <h5>{votes + voteChange} Votes</h5>
+      <h5 id="comvote-head">{votes + voteChange} {votes + voteChange === 1 || votes + voteChange === -1 ? "Vote" : "Votes"}</h5>
       <button className="comment-up-vote" disabled={voteChange > 0} onClick={() => handleClick(1)}>+</button>
       <button className="comment-down-vote" disabled={voteChange < 0} onClick={() => handleClick(-1)}>-</button>
     </div>
