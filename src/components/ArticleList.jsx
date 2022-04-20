@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
-import ArticleCard from "./ArticleCard";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+
+import ArticleCard from "./ArticleCard";
+import ErrorPage from "./ErrorPage";
 
 export default function ArticleList({ order, sortBy }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,27 +35,7 @@ export default function ArticleList({ order, sortBy }) {
   if (isLoading)
     return <h4 className="user-msg">PLEASE WAIT. ARTICLES LOADING....</h4>;
 
-  if (error === 404)
-    return (
-      <>
-        <h4 className="user-msg">
-          OH DEAR! WE DON'T CURRENTLY HAVE ANY ARTICLES FOR {topicStr}!
-        </h4>
-        <Link className="user-msg" to="/">
-          Return to Homepage
-        </Link>
-      </>
-    );
-
-  if (error)
-    return (
-      <>
-        <h4 className="user-msg">OH DEAR! SOMETHING'S GONE WRONG!</h4>
-        <Link className="user-msg" to="/">
-          Return to Homepage
-        </Link>
-      </>
-    );
+  if (error) return <ErrorPage error={error} topicStr={topicStr} />;
 
   return (
     <>
