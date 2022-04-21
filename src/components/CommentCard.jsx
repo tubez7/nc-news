@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import DeleteCom from "./DeleteCom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/user-context";
 
-import CommVote from "./CommVote";
+import DeleteCom from "./DeleteCom";
+import Vote from "./Vote";
 
 export default function CommentCard({
   comment_id,
@@ -41,8 +41,8 @@ export default function CommentCard({
       </section>
       <p className="comment-body">{body}</p>
       <div className="votedel-block">
-        {typeof votes === "number" && (
-          <CommVote votes={votes} commentId={comment_id} />
+        {typeof votes === "number" && (          
+          <Vote votes={votes} commentId={comment_id} />
         )}
 
         {author === loggedInUser.username && (

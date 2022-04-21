@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 import Vote from "./Vote";
 import CommentsList from "./CommentsList";
 import ExpandToggle from "./ExpandToggle";
@@ -45,7 +46,7 @@ export default function SingleArticle({
         </div>
       </section>
       <div className="Article-body">
-        <p className="Article-text">{body}</p>
+        <p className="Article-text">{body}</p>        
         <Vote articleId={article_id} votes={votes} />
         <ExpandToggle comments={comments} comNum={comNum}>
           <CommentAdder
