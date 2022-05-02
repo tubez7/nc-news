@@ -3,11 +3,13 @@
   background-color: rgb(241, 241, 236);
   font-size: 16px;
 }
+
 @media screen and (min-width: 320px) {
   .App {
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
 }
+
 @media screen and (min-width: 1000px) {
   .App {
     font-size: 22px;
@@ -24,19 +26,16 @@
 }
 
 .Nav_Bar {
-  position: relative;
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
     rgb(155, 212, 191)
   );
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: 0.5rem;
   max-width: 750px;
   align-content: center;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 .User_Icon {
@@ -63,9 +62,9 @@
 
 .Nav_Link {
   background-color: rgba(201, 76, 76, 0);
+  min-width: 5em;
   margin: auto;
   color: black;
-  padding: 14px 28px;
   padding-top: 14px;
   padding-bottom: 14px; 
   font-size: 90%;
@@ -141,8 +140,11 @@
     rgb(227, 203, 250)
   );
   margin: auto;
+  min-width: 5em;
   color: black;
-  padding: 14px 28px;
+  padding: 15%;
+  padding-top: 14px;
+  padding-bottom: 14px; 
   font-size: 90%;
   cursor: pointer;
   border-radius: 5px;
@@ -389,16 +391,12 @@ button:hover {
 }
 
 .user-avatar {
-  width: 5em;
   height: 5em;
+  max-width: 100%;
+  min-width: 10%;
 } 
 
 #back-link {
   cursor: pointer;
   text-decoration: underline;
 }
-  
-  
-
-  
-  

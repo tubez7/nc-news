@@ -14,40 +14,38 @@ export default function Nav({ loggedIn, setLoggedIn, defaultUser }) {
 
   return (
     <nav className="Nav_Bar">
-      <div className="Nav_Bar_Items">
-        <div className="User_Icon">
-          <img
-            src={loggedInUser.avatarUrl}
-            className="Avatar_Image"
-            alt="Profile for the logged-in user"
-          />
-          {loggedIn && (
-            <Link to={`/users/${loggedInUser.username}`}>
-              <p>{loggedInUser.username}</p>
-            </Link>
-          )}
-          {!loggedIn && (
-            <Link to="/users">
-              <p>{loggedInUser.username}</p>
-            </Link>
-          )}
-        </div>
+      <div className="User_Icon">
+        <img
+          src={loggedInUser.avatarUrl}
+          className="Avatar_Image"
+          alt="Profile for the logged-in user"
+        />
         {loggedIn && (
-          <p className="logout" onClick={handleClick}>
-            Logout
-          </p>
+          <Link to={`/users/${loggedInUser.username}`}>
+            <p>{loggedInUser.username}</p>
+          </Link>
         )}
-        <div className="Nav-buttons">
-          <Link to="/articles">
-            <button className="Nav_Link">Articles</button>
+        {!loggedIn && (
+          <Link to="/users">
+            <p>{loggedInUser.username}</p>
           </Link>
-          <Link to={"/users"}>
-            <button className="Nav_Link">User Profiles</button>
-          </Link>
-          <Link to="/topics">
-            <button className="Nav_Link">Topics</button>
-          </Link>
-        </div>
+        )}
+      </div>
+      {loggedIn && (
+        <p className="logout" onClick={handleClick}>
+          Logout
+        </p>
+      )}
+      <div className="Nav-buttons">
+        <Link to="/articles">
+          <button className="Nav_Link">Articles</button>
+        </Link>
+        <Link to={"/users"}>
+          <button className="Nav_Link">User Profiles</button>
+        </Link>
+        <Link to="/topics">
+          <button className="Nav_Link">Topics</button>
+        </Link>
       </div>
     </nav>
   );
