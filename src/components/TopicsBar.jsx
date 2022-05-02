@@ -16,7 +16,7 @@ export default function TopicsBar({ topics, setTopics }) {
   if (isLoading) return <h4 className="user-msg">PLEASE WAIT. TOPICS LOADING....</h4>;
 
   return (
-    <div className="Topic-selector">
+    <div className="Topic-buttons">
       {topics.map((topic) => {
         return <TopicSelect key={topic.slug} {...topic} />;
       })}
