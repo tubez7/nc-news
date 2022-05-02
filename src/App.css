@@ -123,10 +123,8 @@
   font-size: 0.75em;
 }
 
-.Topic-selector {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.5rem;
+.Topic-buttons {
+  margin: auto;
   max-width: 750px;
   display: flex;
   justify-content: space-between;
@@ -140,7 +138,6 @@
     rgba(255, 0, 0, 0),
     rgb(227, 203, 250)
   );
-  margin: auto;
   min-width: 5em;
   color: black;
   padding: 15%;
