@@ -3,8 +3,8 @@ export default function Footer() {
     <footer>
       <p>Designed & created by: Richard Black (2022)<br/>
       Contact: <a href="mailto:richardjblack7@gmail.com">richardjblack7@gmail.com</a><br/>
-      GitHub: <a href="https://github.com/tubez7">github.com/tubez7</a><br/>
-      NC News GitHub: <a href="https://github.com/tubez7/nc-news">github.com/tubez7/nc-news</a></p>
+      GitHub: <a href="https://github.com/tubez7" target="_blank" rel="noreferrer">github.com/tubez7</a><br/>
+      NC News GitHub: <a href="https://github.com/tubez7/nc-news" target="_blank" rel="noreferrer">github.com/tubez7/nc-news</a></p>
     </footer>
   );
 }
