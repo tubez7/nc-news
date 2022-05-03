@@ -11,6 +11,7 @@ import ErrorPage from "./components/ErrorPage.jsx";
 import Article from "./components/Article";
 import TopicsList from "./components/TopicsList";
 import Users from "./components/Users";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="/users" element={<Users setLoggedIn={setLoggedIn} />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </div>
     </UserContext.Provider>
   );
