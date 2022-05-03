@@ -129,6 +129,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
 .Topic-button {
@@ -417,4 +418,12 @@ Footer {
   font-size: medium;
   text-align: left;
   padding-left: 1em;
+}
+
+CircularProgress {
+  margin: 1em;
+}
+
+.load-block {
+  text-align: center;
 }
