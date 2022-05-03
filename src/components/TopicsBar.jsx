@@ -13,7 +13,7 @@ export default function TopicsBar({ topics, setTopics }) {
     });
   }, []);
 
-  if (isLoading) return <h4 className="user-msg">PLEASE WAIT. TOPICS LOADING....</h4>;
+  if (isLoading) return <p className="user-msg">PLEASE WAIT. TOPICS LOADING....</p>;
 
   return (
     <div className="Topic-buttons">

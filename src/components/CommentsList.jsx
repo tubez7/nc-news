@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getComments } from "../utils/api";
+import CircularProgress from "@mui/material/CircularProgress";
 import CommentCard from "./CommentCard";
 
 export default function CommentsList({
@@ -21,9 +22,10 @@ export default function CommentsList({
 
   if (isLoading)
     return (
-      <>
+      <div className="load-block">
         <p>{comNum} comments loading ....</p>
-      </>
+        <CircularProgress sx={{ color: "#97D4BF" }} />
+      </div>
     );
 
   return (

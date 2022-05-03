@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import { useParams } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import ArticleCard from "./ArticleCard";
 import ErrorPage from "./ErrorPage";
@@ -33,7 +34,12 @@ export default function ArticleList({ order, sortBy }) {
   }, [topic, sortBy, order]);
 
   if (isLoading)
-    return <h4 className="user-msg">PLEASE WAIT. ARTICLES LOADING....</h4>;
+    return (
+      <div className="load-block">
+        <CircularProgress sx={{ color: "#97D4BF" }} />
+        <p className="user-msg">PLEASE WAIT. ARTICLES LOADING....</p>
+      </div>
+    );
 
   if (error) return <ErrorPage error={error} topicStr={topicStr} />;
 
