@@ -41,16 +41,31 @@
 
 .User_Icon {
   text-align: center;
+}
+
+.user-link {
+  text-decoration: none;
   font-style: italic;
   font-weight: 600;
 }
 
-.logout {
+.user-link:hover {
+  font-weight: bold;
   text-decoration: underline;
+}
+
+.logout {
+  font-style: italic;
   font-weight: 600;
   position: absolute;
   top: 0px;
   right: 1em;
+  cursor: pointer;
+}
+
+.logout:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .Nav-buttons {
@@ -205,7 +220,7 @@
   margin-right: 0.5em;
 }
 
-textarea {
+.TextareaAutosize {
   font-size: large;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   position: relative;
@@ -276,6 +291,7 @@ ul {
 
 .comment-body {
   text-align: justify;
+  white-space: pre-line;
 }
 
 .comment-toggle {
@@ -426,4 +442,8 @@ CircularProgress {
 
 .load-block {
   text-align: center;
+}
+
+a:hover {
+  font-weight: bolder;
 }
