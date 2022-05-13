@@ -12,17 +12,13 @@ const Vote = ({ votes, articleId, commentId }) => {
 
   const [voteChange, setVoteChange] = useState(0);
 
-  const [checked, setChecked] = useState(false);
-
   const [upChecked, setUpChecked] = useState(false);
 
   const [downChecked, setDownChecked] = useState(false);
 
-
   const classStr = articleId ? "article" : "comment";
 
   const handleChange = (voteClick) => {
-    setChecked((currentChecked) => !currentChecked);
 
     setVoteChange((currentVote) => {
       return currentVote + voteClick;
@@ -31,7 +27,6 @@ const Vote = ({ votes, articleId, commentId }) => {
     if (articleId) {
       updateVotes(articleId, voteClick).catch(() => {
         alert("There was a problem registering your vote. Please try again.");
-        setChecked((currentChecked) => !currentChecked);
         setDownChecked(false);
         setUpChecked(false);
         setVoteChange((currentVote) => {
@@ -41,7 +36,6 @@ const Vote = ({ votes, articleId, commentId }) => {
     } else {
       updateComment(commentId, voteClick).catch(() => {
         alert("There was a problem registering your vote. Please try again.");
-        setChecked((currentChecked) => !currentChecked);
         setDownChecked(false);
         setUpChecked(false);
         setVoteChange((currentVote) => {
@@ -55,13 +49,14 @@ const Vote = ({ votes, articleId, commentId }) => {
     <div className={`${classStr}-vote`}>
       <Checkbox
         className={`${classStr}-up-vote`}
+        inputProps={{"aria-label" : "up-vote"}}
         checked={voteChange > 0}
         icon={<ArrowCircleUpOutlinedIcon />}
         sx={{color:"#97D4BF"}}
         checkedIcon={<ArrowCircleUpTwoToneIcon sx={{color:"green"}} />}
         size={classStr === "article" ? "large" : "medium"}
-        onClick={() => {
-          checked ? handleChange(-1) : handleChange(1);
+        onChange={() => {
+          upChecked ? handleChange(-1) : handleChange(1);
           setUpChecked((currentUpChecked) => !currentUpChecked);
         }}
         disabled={downChecked}
@@ -86,13 +81,14 @@ const Vote = ({ votes, articleId, commentId }) => {
       )}
       <Checkbox
         className={`${classStr}-down-vote`}
+        inputProps={{"aria-label" : "down-vote"}}
         checked={voteChange < 0}
-        icon={<ArrowCircleDownOutlined  />}
+        icon={<ArrowCircleDownOutlined />}
         sx={{color:"#F96574"}}
         checkedIcon={<ArrowCircleDownTwoTone sx={{color:"red"}} />}
         size={classStr === "article" ? "large" : "medium"}
         onChange={() => {
-          checked ? handleChange(1) : handleChange(-1);
+          downChecked ? handleChange(1) : handleChange(-1);
           setDownChecked((currentDownChecked) => !currentDownChecked);
         }}
         disabled={upChecked}

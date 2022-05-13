@@ -255,22 +255,6 @@ ul {
   max-width: 750px;
 }
 
-.article-down-vote {
-  /* font-size: large;
-  margin-left: 0.25em;
-  margin-right: 0.25em;
-  height: 3em;
-  width: 3em; */
-}
-
-.article-up-vote {
-  /* font-size: large;
-  margin-left: 0.5em;
-  margin-right: 0.25em;
-  height: 3em;
-  width: 3em; */
-}
-
 .article-vote {
   display: flex;
   justify-content: center;
@@ -312,10 +296,20 @@ ul {
   align-items: center;
 }
 
+.ArrowCircleUpOutlinedIcon:hover {
+  font-size: 1.5em;
+
+}
+
 .com-delete {
   flex:1;
   max-width: 7em;
   margin-right:auto;
+}
+
+.IconButton:hover {
+  color: #F96574;
+  font-size:1.5em;
 }
 
 .vote-separator {
