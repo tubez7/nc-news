@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { postComment } from "../utils/api";
 import { UserContext } from "../contexts/user-context";
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 
 export default function CommentAdder({
   setComments,
@@ -49,14 +50,14 @@ export default function CommentAdder({
 
   return (
     <div>
-      <textarea
-        id="add_comment"
-        name="add_comment"
-        rows="6"
-        placeholder="Leave a comment...."
-        onChange={handleChange}
-        value={newBody}
-      ></textarea>
+      <TextareaAutosize
+      className="TextareaAutosize"
+      aria-label="add comment"
+      minRows={4}
+      placeholder="Leave a comment...."
+      onChange={handleChange}
+      value={newBody}
+      />
       <button disabled={newBody.length === 0} onClick={handleSubmit}>
         Post comment
       </button>

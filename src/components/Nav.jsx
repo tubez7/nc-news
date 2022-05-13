@@ -22,12 +22,12 @@ export default function Nav({ loggedIn, setLoggedIn, defaultUser }) {
         />
         {loggedIn && (
           <Link to={`/users/${loggedInUser.username}`}>
-            <p>{loggedInUser.username}</p>
+            <p className="user-link">{loggedInUser.username}</p>
           </Link>
         )}
         {!loggedIn && (
           <Link to="/users">
-            <p>{loggedInUser.username}</p>
+            <p className="user-link">{loggedInUser.username}</p>
           </Link>
         )}
       </div>

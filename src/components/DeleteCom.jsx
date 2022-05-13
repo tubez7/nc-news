@@ -1,12 +1,9 @@
 import { deleteComment } from "../utils/api";
 
+import IconButton from "@mui/material/IconButton";
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 
-export default function DeleteCom({
-  commentId,
-  setComments,
-  setComNum,
-}) {
-
+export default function DeleteCom({ commentId, setComments, setComNum }) {
   let comIndexToDelete = 0;
 
   let deletedCom = {};
@@ -35,12 +32,34 @@ export default function DeleteCom({
       });
     } else {
       return (
-        <div className="com-delete">{commentId && <button onClick={handleClick}>Delete</button>}</div>
+        <div className="com-delete">
+          {commentId && (
+            <IconButton
+              className="IconButton"
+              aria-label="delete"
+              size="large"
+              onClick={handleClick}
+            >
+              <DeleteTwoToneIcon fontSize="inherit" />
+            </IconButton>
+          )}
+        </div>
       );
     }
   };
 
   return (
-    <div className="com-delete">{commentId && <button onClick={handleClick}>Delete</button>}</div>
+    <div className="com-delete">
+      {commentId && (
+        <IconButton
+          className="IconButton"
+          aria-label="delete"
+          size="large"
+          onClick={handleClick}
+        >
+          <DeleteTwoToneIcon fontSize="inherit" />
+        </IconButton>
+      )}
+    </div>
   );
 }

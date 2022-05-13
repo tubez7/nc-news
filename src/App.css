@@ -41,16 +41,31 @@
 
 .User_Icon {
   text-align: center;
+}
+
+.user-link {
+  text-decoration: none;
   font-style: italic;
   font-weight: 600;
 }
 
-.logout {
+.user-link:hover {
+  font-weight: bold;
   text-decoration: underline;
+}
+
+.logout {
+  font-style: italic;
   font-weight: 600;
   position: absolute;
   top: 0px;
   right: 1em;
+  cursor: pointer;
+}
+
+.logout:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .Nav-buttons {
@@ -205,7 +220,7 @@
   margin-right: 0.5em;
 }
 
-textarea {
+.TextareaAutosize {
   font-size: large;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   position: relative;
@@ -240,22 +255,6 @@ ul {
   max-width: 750px;
 }
 
-.article-down-vote {
-  font-size: large;
-  margin-left: 0.25em;
-  margin-right: 0.25em;
-  height: 3em;
-  width: 3em;
-}
-
-.article-up-vote {
-  font-size: large;
-  margin-left: 0.5em;
-  margin-right: 0.25em;
-  height: 3em;
-  width: 3em;
-}
-
 .article-vote {
   display: flex;
   justify-content: center;
@@ -276,6 +275,7 @@ ul {
 
 .comment-body {
   text-align: justify;
+  white-space: pre-line;
 }
 
 .comment-toggle {
@@ -296,31 +296,20 @@ ul {
   align-items: center;
 }
 
-.comment-up-vote {
-  font-size: 90%;
-  cursor: pointer;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  margin-left: 0.1em;
-  height: 2em;
-  width: 2em;
-}
+.ArrowCircleUpOutlinedIcon:hover {
+  font-size: 1.5em;
 
-.comment-down-vote {
-  font-size: 90%;
-  cursor: pointer;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  margin-left: 0.1em;
-  margin-right: 1.5em;
-  height: 2em;
-  width: 2em;
 }
 
 .com-delete {
   flex:1;
   max-width: 7em;
   margin-right:auto;
+}
+
+.IconButton:hover {
+  color: #F96574;
+  font-size:1.5em;
 }
 
 .vote-separator {
@@ -426,4 +415,8 @@ CircularProgress {
 
 .load-block {
   text-align: center;
+}
+
+a:hover {
+  font-weight: bolder;
 }
