@@ -266,7 +266,7 @@ ul {
   border-color: rgb(124, 124, 124);
   background-color: beige;
   max-width: 850px;
-  padding: 1em;
+  padding: 0.25em;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: auto;
@@ -296,11 +296,6 @@ ul {
   align-items: center;
 }
 
-.ArrowCircleUpOutlinedIcon:hover {
-  font-size: 1.5em;
-
-}
-
 .com-delete {
   flex:1;
   max-width: 7em;
@@ -311,11 +306,6 @@ ul {
   color: #F96574;
   font-size:1.5em;
 }
-
-.vote-separator {
-  max-width: 10%;
-  margin-right: auto;
- }
 
 button {
   background-color: rgb(211, 209, 209);
