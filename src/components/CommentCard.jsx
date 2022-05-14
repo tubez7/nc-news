@@ -41,19 +41,15 @@ export default function CommentCard({
       </section>
       <p className="comment-body">{body}</p>
       <div className="votedel-block">
-        {typeof votes === "number" && (          
+        {typeof votes === "number" && (
           <Vote votes={votes} commentId={comment_id} />
         )}
-
         {author === loggedInUser.username && (
-          <>
-            <h5 className="vote-separator">-||-</h5>
-            <DeleteCom
-              commentId={comment_id}
-              setComments={setComments}
-              setComNum={setComNum}
-            />
-          </>
+          <DeleteCom
+            commentId={comment_id}
+            setComments={setComments}
+            setComNum={setComNum}
+          />
         )}
       </div>
     </div>
