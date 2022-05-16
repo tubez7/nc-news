@@ -296,6 +296,11 @@ ul {
   align-items: center;
 }
 
+.alert-block {
+  display: flex;
+  justify-content: center;
+}
+
 .com-delete {
   flex:1;
   max-width: 7em;

@@ -7,53 +7,71 @@ import ArrowCircleUpTwoToneIcon from "@mui/icons-material/ArrowCircleUpTwoTone";
 import ArrowCircleUpOutlinedIcon from "@mui/icons-material/ArrowCircleUpOutlined";
 import ArrowCircleDownTwoTone from "@mui/icons-material/ArrowCircleDownTwoTone";
 import ArrowCircleDownOutlined from "@mui/icons-material/ArrowCircleDownOutlined";
+import Alert from "@mui/material/Alert";
 
 const Vote = ({ votes, articleId, commentId }) => {
-
+  
   const [voteChange, setVoteChange] = useState(0);
 
   const [upChecked, setUpChecked] = useState(false);
 
   const [downChecked, setDownChecked] = useState(false);
 
+  const [err, setErr] = useState(false);
+
   const classStr = articleId ? "article" : "comment";
 
   const handleChange = (voteClick) => {
-
     setVoteChange((currentVote) => {
       return currentVote + voteClick;
     });
 
     if (articleId) {
       updateVotes(articleId, voteClick).catch(() => {
-        alert("There was a problem registering your vote. Please try again.");
         setDownChecked(false);
         setUpChecked(false);
         setVoteChange((currentVote) => {
           return currentVote - voteClick;
         });
+        setErr(true);
       });
     } else {
       updateComment(commentId, voteClick).catch(() => {
-        alert("There was a problem registering your vote. Please try again.");
         setDownChecked(false);
         setUpChecked(false);
         setVoteChange((currentVote) => {
           return currentVote - voteClick;
         });
+        setErr(true);
       });
     }
   };
+
+  if (err)
+    return (
+      <div className="alert-block">
+        <Alert
+          variant="outlined"
+          severity="error"
+          onClose={() => {
+            setErr(false);
+          }}
+          sx={{ mb: 2 }}
+        >
+          There was a problem registering your vote. Please try again.
+        </Alert>
+      </div>
+    );
 
   return (
     <div className={`${classStr}-vote`}>
       <Checkbox
         className={`${classStr}-up-vote`}
-        inputProps={{"aria-label" : "up-vote"}}
+        inputProps={{ "aria-label": "up-vote" }}
         checked={voteChange > 0}
         icon={<ArrowCircleUpOutlinedIcon />}
-        sx={{color:"#97D4BF"}}
-        checkedIcon={<ArrowCircleUpTwoToneIcon sx={{color:"green"}} />}
+        sx={{ color: "#97D4BF" }}
+        checkedIcon={<ArrowCircleUpTwoToneIcon sx={{ color: "green" }} />}
         size={classStr === "article" ? "large" : "medium"}
         onChange={() => {
           upChecked ? handleChange(-1) : handleChange(1);
@@ -81,11 +99,11 @@ const Vote = ({ votes, articleId, commentId }) => {
       )}
       <Checkbox
         className={`${classStr}-down-vote`}
-        inputProps={{"aria-label" : "down-vote"}}
+        inputProps={{ "aria-label": "down-vote" }}
         checked={voteChange < 0}
         icon={<ArrowCircleDownOutlined />}
-        sx={{color:"#F96574"}}
-        checkedIcon={<ArrowCircleDownTwoTone sx={{color:"red"}} />}
+        sx={{ color: "#F96574" }}
+        checkedIcon={<ArrowCircleDownTwoTone sx={{ color: "red" }} />}
         size={classStr === "article" ? "large" : "medium"}
         onChange={() => {
           downChecked ? handleChange(1) : handleChange(-1);
