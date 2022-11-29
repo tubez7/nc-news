@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://richard-nc-news.herokuapp.com/api",
+  baseURL: "https://doubtful-calf-snaps.cyclic.app/api",
 });
 
 export function getArticles(topic, sort, order) {
@@ -75,6 +75,4 @@ export function updateComment(commentId, voteChange) {
     .then(({ data: { comment } }) => {
       return comment;
     });
-};
-
-
+}
