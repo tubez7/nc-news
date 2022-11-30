@@ -4,7 +4,7 @@ https://richard-nc-news.netlify.app
 
 The above link will take you to the hosted version of this app. This app was built with React as a front-end project for the Northcoders coding bootcamp. The user interface was built and designed to be optimised on most mobile device displays but will upscale to function as a standard website too. It connects to the NC News API which was also built for the Northocders bootcamp as a back-end course project.
 
-Link: https://richard-nc-news.herokuapp.com/api \
+Link: https://nc-news-api.cyclic.app/api \
 Github: https://github.com/tubez7/backend-nc-news
 
 The app will currently allow you to read articles which can be filtered by topic, ordered by various criteria (eg - date of publication, author's username etc), and sorted in either ascending or descending order.
